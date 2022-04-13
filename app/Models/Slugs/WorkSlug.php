@@ -4,7 +4,7 @@ namespace App\Models\Slugs;
 
 use A17\Twill\Models\Model;
 
-class CaseSlug extends Model
+class WorkSlug extends Model
 {
-    protected $table = "case_slugs";
+    protected $table = "work_slugs";
 }

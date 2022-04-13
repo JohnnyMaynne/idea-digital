@@ -7,21 +7,24 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
+use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
 
-class Post extends Model 
+class Post extends Model
 {
-    use HasBlocks, HasSlug, HasMedias, HasRevisions;
+    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasMetadata;
+
+    public $metadataFallbacks = [];
 
     protected $fillable = [
         'published',
         'title',
         'description',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
     public $mediasParams = [
         'cover' => [
             'default' => [

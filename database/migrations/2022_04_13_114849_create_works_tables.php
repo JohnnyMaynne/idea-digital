@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCasesTables extends Migration
+class CreateWorksTables extends Migration
 {
     public function up()
     {
-        Schema::create('cases', function (Blueprint $table) {
+        Schema::create('works', function (Blueprint $table) {
             createDefaultTableFields($table);
             $table->string('title', 200)->nullable();
             $table->text('description')->nullable();
@@ -17,19 +17,19 @@ class CreateCasesTables extends Migration
              $table->timestamp('publish_end_date')->nullable();
         });
 
-        Schema::create('case_slugs', function (Blueprint $table) {
-            createDefaultSlugsTableFields($table, 'case');
+        Schema::create('work_slugs', function (Blueprint $table) {
+            createDefaultSlugsTableFields($table, 'work');
         });
 
-        Schema::create('case_revisions', function (Blueprint $table) {
-            createDefaultRevisionsTableFields($table, 'case');
+        Schema::create('work_revisions', function (Blueprint $table) {
+            createDefaultRevisionsTableFields($table, 'work');
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('case_revisions');
-        Schema::dropIfExists('case_slugs');
-        Schema::dropIfExists('cases');
+        Schema::dropIfExists('work_revisions');
+        Schema::dropIfExists('work_slugs');
+        Schema::dropIfExists('works');
     }
 }

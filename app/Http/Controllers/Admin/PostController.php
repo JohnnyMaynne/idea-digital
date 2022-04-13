@@ -10,4 +10,12 @@ class PostController extends BaseModuleController
 
     protected $indexOptions = [
     ];
+
+    protected function formData($request)
+    {
+        return [
+            'metadata_card_type_options' => config('metadata.card_type_options'),
+            'metadata_og_type_options' => config('metadata.opengraph_type_options'),
+        ];
+    }
 }

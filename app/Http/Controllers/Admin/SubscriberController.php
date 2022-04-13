@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 
-class CaseController extends BaseModuleController
+class SubscriberController extends BaseModuleController
 {
-    protected $moduleName = 'cases';
+    protected $moduleName = 'subscribers';
 
     protected $indexOptions = [
+        'permalink' => false,
     ];
 }

@@ -9,10 +9,13 @@ use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
+use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
 
-class Case extends Model implements Sortable
+class Work extends Model implements Sortable
 {
-    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasPosition;
+    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasPosition, HasMetadata;
+
+    public $metadataFallbacks = [];
 
     protected $fillable = [
         'published',
@@ -20,11 +23,11 @@ class Case extends Model implements Sortable
         'description',
         'position',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
     public $mediasParams = [
         'cover' => [
             'default' => [

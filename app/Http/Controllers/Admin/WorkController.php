@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 
-class PostCategoryController extends BaseModuleController
+class WorkController extends BaseModuleController
 {
-    protected $moduleName = 'postCategories';
+    protected $moduleName = 'works';
 
     protected $indexOptions = [
     ];
