@@ -6,7 +6,7 @@ use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 
 class WorkController extends BaseModuleController
 {
-    protected $moduleName = 'works';
+    protected $moduleName = 'cases';
 
     protected $indexOptions = [
     ];

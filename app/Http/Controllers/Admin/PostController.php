@@ -6,7 +6,7 @@ use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 
 class PostController extends BaseModuleController
 {
-    protected $moduleName = 'posts';
+    protected $moduleName = 'blog/category';
 
     protected $indexOptions = [
     ];
