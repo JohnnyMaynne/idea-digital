@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <x-app.page invert>
+    <x-app.page>
         <x-app.hero/>
         <x-works.latest/>
         <x-clients.logos/>

@@ -12,7 +12,9 @@
 <header class="relative z-40 {{ $invert ? 'text-white' : 'text-gray-900' }}">
     <x-app.container>
         <div class="flex items-center justify-between h-24">
-             <x-app.logo/>
+            <a href="{{ route('home') }}">
+             <x-app.logo :invert="$invert"/>
+            </a>
             <ul class="text-lg leading-none flex items-center">
                 @foreach($items as $item)
                     <li>

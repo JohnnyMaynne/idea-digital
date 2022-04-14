@@ -11,11 +11,7 @@
 </head>
 <body class="antialiased text-gray-900">
 
-    <x-app.header/>
-
     @yield('content')
-
-    <x-app.footer/>
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

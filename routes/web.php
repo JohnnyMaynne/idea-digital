@@ -15,3 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeController::class)->name('home');
+Route::view('/seo', 'site.pages.seo')->name('seo');
+Route::view('/about-us', 'site.pages.about-us')->name('about-us');
+Route::view('/team', 'site.pages.team')->name('team');
+Route::view('/testimonials', 'site.pages.testimonials')->name('testimonials');
+Route::view('/job', 'site.pages.job')->name('job');

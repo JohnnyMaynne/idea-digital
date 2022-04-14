@@ -1,4 +1,4 @@
-<div {{ $attributes->class('-mt-24 min-h-hero relative') }}>
+<div {{ $attributes->class('min-h-hero relative') }}>
     <div class="pt-40 relative z-30">
         <x-app.container>
             <div class="text-7xl max-w-[900px] max-w-3xl font-bold text-white">

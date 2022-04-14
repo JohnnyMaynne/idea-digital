@@ -91,7 +91,6 @@ return [
         ]
     ],
 
-
     'feedback' => [
         'title' => 'Обратная связь',
         'route' => 'admin.feedback.emails.index',

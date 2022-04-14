@@ -1,4 +1,4 @@
-<x-app.section>
+<x-app.section {{$attributes->class('')}}>
     <x-app.container>
         <x-app.grid>
             <div>
