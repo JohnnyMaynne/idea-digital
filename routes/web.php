@@ -20,3 +20,8 @@ Route::view('/about-us', 'site.pages.about-us')->name('about-us');
 Route::view('/team', 'site.pages.team')->name('team');
 Route::view('/testimonials', 'site.pages.testimonials')->name('testimonials');
 Route::view('/job', 'site.pages.job')->name('job');
+Route::view('/blog', 'site.pages.blog')->name('blog');
+Route::view('/blog/{slug}', 'site.pages.blog-single')->name('blog.single');
+Route::view('/cases', 'site.pages.cases')->name('cases');
+Route::view('/cases/{slug}', 'site.pages.cases-single')->name('cases.single');
+Route::view('/contacts', 'site.pages.contacts')->name('contacts');

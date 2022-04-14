@@ -21,7 +21,7 @@
                 <div>
                     <ul role="list">
                         @for ($i = 0; $i < 5; $i++)
-                            <li class="p-4 flex rounded transition {{ $i === 0 ? 'bg-gray-100 border-l-4' : 'hover:bg-gray-50 hover:text-gray-700 text-gray-400 cursor-pointer' }}">
+                            <li class="p-4 flex transition {{ $i === 0 ? 'bg-gray-100 border-l-4' : 'hover:bg-gray-50 hover:text-gray-700 text-gray-400 cursor-pointer' }}">
                                 {{ $items[$i] }}
                             </li>
                         @endfor
