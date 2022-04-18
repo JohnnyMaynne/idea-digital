@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\App\BlogFormController;
 use App\Http\Controllers\App\HomeController;
+use App\Http\Controllers\App\PostsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +22,14 @@ Route::view('/about-us', 'site.pages.about-us')->name('about-us');
 Route::view('/team', 'site.pages.team')->name('team');
 Route::view('/testimonials', 'site.pages.testimonials')->name('testimonials');
 Route::view('/job', 'site.pages.job')->name('job');
+
+// blog
 Route::view('/blog', 'site.pages.blog')->name('blog');
-Route::view('/blog/{slug}', 'site.pages.blog-single')->name('blog.single');
+Route::get('/blog/{slug}', PostsController::class)->name('blog.single');
+Route::post('/blog', BlogFormController::class)->name('blog.form');
+
+
 Route::view('/cases', 'site.pages.cases')->name('cases');
 Route::view('/cases/{slug}', 'site.pages.cases-single')->name('cases.single');
 Route::view('/contacts', 'site.pages.contacts')->name('contacts');
+

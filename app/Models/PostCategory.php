@@ -8,6 +8,8 @@ use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class PostCategory extends Model implements Sortable
 {
@@ -56,5 +58,11 @@ class PostCategory extends Model implements Sortable
             ],
         ],
     ];
+
+
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class,'category_id','id');
+    }
 
 }

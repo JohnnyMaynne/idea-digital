@@ -7,18 +7,24 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
+use App\Traits\HasAuthor;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
+use CyrildeWit\EloquentViewable\Contracts\Viewable;
+use CyrildeWit\EloquentViewable\InteractsWithViews;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Post extends Model
+class Post extends Model implements Viewable
 {
-    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasMetadata;
+    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasMetadata, HasAuthor, InteractsWithViews;
 
     public $metadataFallbacks = [];
 
     protected $fillable = [
         'published',
         'title',
-        'description',
+        'category_id',
+        'publish_start_date',
+        'publish_end_date',
     ];
 
     public $slugAttributes = [
@@ -29,30 +35,22 @@ class Post extends Model
         'cover' => [
             'default' => [
                 [
-                    'name' => 'default',
-                    'ratio' => 16 / 9,
+                    'name' => 'article',
+                    'ratio' => 1425 / 640,
                 ],
             ],
-            'mobile' => [
+            'card' => [
                 [
-                    'name' => 'mobile',
-                    'ratio' => 1,
-                ],
-            ],
-            'flexible' => [
-                [
-                    'name' => 'free',
-                    'ratio' => 0,
-                ],
-                [
-                    'name' => 'landscape',
-                    'ratio' => 16 / 9,
-                ],
-                [
-                    'name' => 'portrait',
-                    'ratio' => 3 / 5,
+                    'name' => 'card',
+                    'ratio' => 610 / 345,
                 ],
             ],
         ],
     ];
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(PostCategory::class,'category_id','id');
+    }
+
 }

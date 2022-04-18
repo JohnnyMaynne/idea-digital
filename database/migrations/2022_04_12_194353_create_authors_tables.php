@@ -11,8 +11,6 @@ class CreateAuthorsTables extends Migration
         Schema::create('authors', function (Blueprint $table) {
             createDefaultTableFields($table);
             $table->string('title', 200)->nullable();
-            $table->string('authorable_type')->nullable();
-            $table->integer('authorable_id')->nullable();
             $table->integer('position')->unsigned()->nullable();
         });
 

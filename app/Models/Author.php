@@ -8,6 +8,8 @@ use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Author extends Model implements Sortable
 {
@@ -18,7 +20,6 @@ class Author extends Model implements Sortable
     protected $fillable = [
         'published',
         'title',
-        'description',
         'position',
     ];
 
@@ -31,29 +32,22 @@ class Author extends Model implements Sortable
             'default' => [
                 [
                     'name' => 'default',
-                    'ratio' => 16 / 9,
-                ],
-            ],
-            'mobile' => [
-                [
-                    'name' => 'mobile',
-                    'ratio' => 1,
-                ],
-            ],
-            'flexible' => [
-                [
-                    'name' => 'free',
-                    'ratio' => 0,
-                ],
-                [
-                    'name' => 'landscape',
-                    'ratio' => 16 / 9,
-                ],
-                [
-                    'name' => 'portrait',
-                    'ratio' => 3 / 5,
+                    'ratio' => 9 / 16,
                 ],
             ],
         ],
     ];
+
+
+    public function posts(): MorphToMany
+    {
+        return $this->morphedByMany(Post::class, 'authorable');
+    }
+
+
+    public function works(): MorphToMany
+    {
+        return $this->morphedByMany(Work::class, 'authorable');
+    }
+
 }

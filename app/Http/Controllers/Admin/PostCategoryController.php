@@ -8,6 +8,8 @@ class PostCategoryController extends BaseModuleController
 {
     protected $moduleName = 'postCategories';
 
+    protected $permalinkBase = 'blog/category';
+
     protected $indexOptions = [
     ];
 

@@ -13,6 +13,9 @@ class PostRequest extends Request
 
     public function rulesForUpdate()
     {
-        return [];
+        return [
+            'category_id' => 'required',
+            'author_id' => 'required'
+        ];
     }
 }
