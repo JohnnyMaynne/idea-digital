@@ -31,7 +31,7 @@
                             </button>
                         </div>
                         <div>
-                            <input @keydown.esc="toggle()" x-ref="input" x-model="search" type="text" placeholder="Enter your request" class="border-2 p-5 border-gray-100 w-full text-xl font-medium">
+                            <input @keydown.esc="toggle()" x-ref="input" x-model="search" type="text" placeholder="Enter your request" class="border-2 p-3 border-gray-100 w-full font-medium">
                         </div>
                     </div>
             </x-app.container>

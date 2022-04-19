@@ -106,4 +106,17 @@ return [
             ],
         ]
     ],
+
+    'settings' => [
+        'title' => 'Settings',
+        'route' => 'admin.settings',
+        'params' => ['section' => 'seo'],
+        'primary_navigation' => [
+            'seo' => [
+                'title' => 'Seo settings',
+                'route' => 'admin.settings',
+                'params' => ['section' => 'seo']
+            ],
+        ]
+    ],
 ];
