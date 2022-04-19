@@ -1,4 +1,4 @@
-<div class="mb-8 w-full mx-auto space-y-12">
+<div id="comments" class="mb-8 w-full mx-auto space-y-12">
     <x-app.comments-form :model="$model"/>
 
     @if(count($model->comments))

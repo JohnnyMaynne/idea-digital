@@ -31,7 +31,7 @@
             <x-app.container>
                 <x-app.grid>
                     @foreach($posts as $post)
-                        <x-blog.article-card :post="$post"/>
+                        <x-blog.article-card blog :post="$post"/>
                     @endforeach
                 </x-app.grid>
             </x-app.container>

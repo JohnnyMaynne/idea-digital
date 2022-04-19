@@ -12,7 +12,7 @@
         <div class="mt-16">
             <x-app.grid>
                @foreach($posts as $post)
-                    <x-blog.article-card :post="$post"/>
+                    <x-blog.article-card  blog :post="$post"/>
                @endforeach
             </x-app.grid>
         </div>

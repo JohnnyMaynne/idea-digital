@@ -1,9 +1,9 @@
-@props(['post'])
+@props(['post','blog' => false])
 
 @php
     $image = $post->imageAsArray('cover', 'default', ['w' => 620]);
-    $link = route('blog.single',['slug' => $post->slug]);
-    $excerpt = \App\Helpers\TextHelpers::getExcerpt($post->renderBlocks(), 30)
+    $link = $blog ? route('blog.single',['slug' => $post->slug]) : route('cases.single',['slug' => $post->slug]);
+    $excerpt = $blog ? \App\Helpers\TextHelpers::getExcerpt($post->renderBlocks(), 30) : \App\Helpers\TextHelpers::getExcerpt($post->description, 30)
 @endphp
 
 <div>

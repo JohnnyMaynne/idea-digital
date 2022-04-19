@@ -2,6 +2,7 @@
 
 
 use App\Models\PostCategory;
+use App\Models\Work;
 use Tabuna\Breadcrumbs\Trail;
 
 
@@ -84,8 +85,16 @@ Breadcrumbs::for('contacts', fn (Trail $trail) =>
 );
 
 // cases
-Breadcrumbs::for('seo', fn (Trail $trail) =>
+Breadcrumbs::for('cases', fn (Trail $trail) =>
     $trail
          ->parent('home')
         ->push('Seo service', route('seo'))
 );
+
+Breadcrumbs::for('cases.single', function (Trail $trail, string $slug) {
+    $current = Work::forSlug($slug)->first();
+
+    $trail
+        ->parent('cases')
+        ->push($current->title, route('cases.single', ['slug' => $current->slug]));
+});

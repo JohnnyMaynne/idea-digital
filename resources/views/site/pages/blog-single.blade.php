@@ -61,7 +61,7 @@
                             </svg>
                             <span>{{  views($item)->count() }} views</span>
                         </div>
-                        <div class="font-medium flex items-center space-x-2 text-white">
+                        <a href="#comments" class="font-medium flex items-center space-x-2 text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <path d="M12 20l-3 -3h-2a3 3 0 0 1 -3 -3v-6a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-2l-3 3"></path>
@@ -69,7 +69,7 @@
                                 <line x1="8" y1="13" x2="14" y2="13"></line>
                             </svg>
                             <span>{{ count($item->comments) }} comments</span>
-                        </div>
+                        </a>
                     </div>
 
 

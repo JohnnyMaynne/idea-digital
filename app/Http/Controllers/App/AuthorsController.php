@@ -21,7 +21,9 @@ class AuthorsController extends Controller
 
         return view('site.pages.author',[
             'author' => $author,
-            'posts' => $author->posts()->paginate()
+            'posts' => request()->query('cases') === 'true'
+                ?  $author->works()->paginate()
+                : $author->posts()->paginate(),
         ]);
     }
 }

@@ -7,7 +7,7 @@
 @section('content')
     <x-app.page>
         <div>
-            <div class="pt-40 pb-0 relative z-30">
+            <div class="pt-40 pb-10 relative z-30">
                 <x-app.container>
                     <div class="max-w-5xl flex items-center space-x-4">
                         @if(count($image))
@@ -28,11 +28,13 @@
             </div>
         </div>
 
-        <x-app.section class="py-20">
+        <x-author.tabs :author="$author"/>
+
+        <x-app.section class="pb-20 pt-10">
             <x-app.container>
-                <x-app.grid>
+                <x-app.grid class="mt-12">
                     @foreach($posts as $post)
-                        <x-blog.article-card :post="$post"/>
+                        <x-blog.article-card :blog="!request()->query('cases')" :post="$post"/>
                     @endforeach
                 </x-app.grid>
             </x-app.container>
