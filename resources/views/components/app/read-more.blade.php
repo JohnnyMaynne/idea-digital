@@ -1,9 +1,10 @@
 @props([
-    'invert' => false
+    'invert' => false,
+    'href' => '#'
 ])
 
-<button {{ $attributes->class([
-        '-ml-3 inline-flex items-center px-3 py-1 rounded-full space-x-2 transition',
+<a href="{{ $href }}" {{ $attributes->class([
+        '-ml-3 inline-flex items-center px-3 py-1 rounded-full space-x-2 transition no-underline',
         'text-white hover:bg-white/20' => $invert,
         'text-blue-700 hover:bg-blue-700/5' => !$invert
     ]) }}>
@@ -13,4 +14,4 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
         </svg>
     </div>
-</button>
+</a>

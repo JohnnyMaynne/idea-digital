@@ -6,7 +6,7 @@
         <x-app.hero/>
         <x-works.latest/>
         <x-clients.logos/>
-        <x-blog.grid/>
+        <x-blog.grid :posts="$posts"/>
         <x-testimonials.grid/>
         <x-questions.section/>
         <x-feedback.form/>

@@ -1,11 +1,15 @@
 @extends('twill::layouts.form', [
-    'disableContentFieldset' => true,
     'additionalFieldsets' => [
         ['fieldset' => 'metadata', 'label' => 'SEO'],
     ]
 ])
 
-
+@section('contentFields')
+    @formField('medias', [
+        'name' => 'cover',
+        'label' => 'Фото',
+    ])
+@endsection
 
 @section('fieldsets')
     @metadataFields

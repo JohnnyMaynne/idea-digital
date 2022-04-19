@@ -1,7 +1,4 @@
 @extends('site.layouts.app')
-@php
-    $items = ['All articles','Seo','Testimonials','Webdev'];
-@endphp
 
 @section('content')
     <x-app.page>
@@ -9,7 +6,7 @@
             <div class="pt-40 pb-20 relative z-30">
                 <x-app.container>
                     <div class="text-7xl max-w-[900px] max-w-3xl font-bold">
-                        Blog
+                        {{ $category->title ?? 'Blog' }}
                     </div>
                 </x-app.container>
             </div>
@@ -19,9 +16,12 @@
         <div class="border-b">
             <x-app.container>
                 <ul class="flex items-center space-x-6">
-                    @foreach($items as $item)
+                    <li>
+                        <a class="py-4 block font-medium transition {{ request()->route()->getName() === 'blog' ? 'border-b border-gray-900 cursor-default' : 'border-transparent hover:opacity-50' }}" href="{{ route('blog') }}">All articles</a>
+                    </li>
+                    @foreach($categories as $category)
                         <li>
-                            <a class="py-4 block font-medium transition {{ $loop->index === 0 ? 'border-b border-gray-900 cursor-default' : 'border-transparent hover:opacity-50' }}" href="#">{{ $item }}</a>
+                            <a class="py-4 block font-medium transition {{ request()->route('slug') === $category->slug ? 'border-b border-gray-900 cursor-default' : 'border-transparent hover:opacity-50' }}" href="{{ route('blog.category',['slug' => $category->slug]) }}">{{ $category->title }}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -31,9 +31,9 @@
         <x-app.section class="py-20">
             <x-app.container>
                 <x-app.grid>
-                    @for ($i = 0; $i < 12; $i++)
-                        <x-blog.article-card/>
-                    @endfor
+                    @foreach($posts as $post)
+                        <x-blog.article-card :post="$post"/>
+                    @endforeach
                 </x-app.grid>
             </x-app.container>
         </x-app.section>

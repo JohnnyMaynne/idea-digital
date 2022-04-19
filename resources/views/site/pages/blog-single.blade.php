@@ -17,7 +17,7 @@
                         <ol role="list" class="flex items-center space-x-4">
                             <li>
                                 <div class="flex items-center">
-                                    <a href="#" class="transition text-sm font-medium text-white hover:text-white/70">Blog</a>
+                                    <a href="{{ route('blog') }}" class="transition text-sm font-medium text-white hover:text-white/70">Blog</a>
                                 </div>
                             </li>
 
@@ -26,7 +26,7 @@
                                     <svg class="flex-shrink-0 h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                                         <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                                     </svg>
-                                    <a href="#" class="transition ml-4 text-sm font-medium text-white hover:text-white/70" aria-current="page">{{ $item->category->title }}</a>
+                                    <a href="{{ route('blog.category',['slug' => $item->category->slug]) }}" class="transition ml-4 text-sm font-medium text-white hover:text-white/70" aria-current="page">{{ $item->category->title }}</a>
                                 </div>
                             </li>
                         </ol>
@@ -37,14 +37,14 @@
                     </div>
 
                     <div class="mt-8 flex items-center space-x-8">
-                        <div class="font-medium flex items-center space-x-2 text-white">
+                        <a href="{{ route('author',['slug' => $item->author->slug]) }}" class="font-medium flex items-center space-x-2 text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <circle cx="12" cy="7" r="4"></circle>
                                 <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
                             </svg>
                             <span>{{ $item->author->title }}</span>
-                        </div>
+                        </a>
                         <div class="font-medium flex items-center space-x-2 text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -103,107 +103,67 @@
                     {!! $article_content !!}
                 </article>
             </div>
+
+            <div class="mx-auto w-full mt-8 mb-16 px-4 max-w-4xl">
+                <x-app.shared :title="$item->title" :url="route('blog.single',['slug' => $item->slug])">
+                    <x-app.rating :model="$item"/>
+                </x-app.shared>
+            </div>
+
+            <div class="mx-auto w-full  px-4 max-w-4xl">
+                <x-app.comments :model="$item"/>
+            </div>
+
         </x-app.section>
 
 
-        <div class="border-t pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-            <div class="relative max-w-lg mx-auto lg:max-w-7xl">
-                <div>
-                    <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Recent publications</h2>
-                    <p class="mt-3  text-gray-500 sm:mt-4">Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.</p>
-                </div>
-                <div class="mt-8 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+        @if(count($related))
+            <div class="border-t pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+                <div class="relative max-w-lg mx-auto lg:max-w-7xl">
                     <div>
-                        <div>
-                            <a href="#" class="inline-block">
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800"> Article </span>
-                            </a>
-                        </div>
-                        <a href="#" class="block mt-4">
-                            <p class="text-xl font-semibold text-gray-900">Boost your conversion rate</p>
-                            <p class="mt-3 text-base text-gray-500">Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.</p>
-                        </a>
-                        <div class="mt-6 flex items-center">
-                            <div class="flex-shrink-0">
-                                <a href="#">
-                                    <span class="sr-only">Paul York</span>
-                                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                                </a>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <a href="#"> Paul York </a>
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="2020-03-16"> Mar 16, 2020 </time>
-                                    <span aria-hidden="true"> &middot; </span>
-                                    <span> 6 min read </span>
-                                </div>
-                            </div>
-                        </div>
+                        <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Recent publications</h2>
+                        <p class="mt-3  text-gray-500 sm:mt-4">Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.</p>
                     </div>
-
-                    <div>
-                        <div>
-                            <a href="#" class="inline-block">
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800"> Video </span>
-                            </a>
-                        </div>
-                        <a href="#" class="block mt-4">
-                            <p class="text-xl font-semibold text-gray-900">How to use search engine optimization to drive sales</p>
-                            <p class="mt-3 text-base text-gray-500">Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.</p>
-                        </a>
-                        <div class="mt-6 flex items-center">
-                            <div class="flex-shrink-0">
-                                <a href="#">
-                                    <span class="sr-only">Dessie Ryan</span>
-                                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <div class="grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+                        @foreach($related as $post)
+                            <div>
+                                <a href="{{ route('blog.single',['slug' => $post->slug]) }}" class="block mt-4">
+                                    <p class="text-xl font-semibold text-gray-900">{{  $post->title }}</p>
+                                    <p class="mt-3 text-base text-gray-500">
+                                        {{ \App\Helpers\TextHelpers::getExcerpt($post->renderBlocks(), 20) }}
+                                    </p>
                                 </a>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <a href="#"> Dessie Ryan </a>
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="2020-03-10"> Mar 10, 2020 </time>
-                                    <span aria-hidden="true"> &middot; </span>
-                                    <span> 4 min read </span>
+                                <div class="mt-6 flex items-center">
+                                    <div class="flex-shrink-0">
+                                        @php
+                                            $authorImage = $post->imageAsArray('cover','default',['w' => 50])
+                                        @endphp
+                                        @if(count($authorImage))
+                                            <a href="{{ route('author',['slug' => $post->author->slug]) }}">
+                                                <img class="h-10 w-10 rounded-full"
+                                                     data-src="{{ $authorImage['src'] }}"
+                                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                     title="{{ $authorImage['alt'] }}"
+                                                     alt="{{ $authorImage['alt'] }}">
+                                            </a>
+                                        @endif
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm font-medium text-gray-900">
+                                            <a href="{{ route('author',['slug' => $post->author->slug]) }}">{{ $post->author->title }}</a>
+                                        </p>
+                                        <div class="flex space-x-1 text-sm text-gray-500">
+                                            <time datetime="{{ $post->created_at->format('m-d-y') }}">{{ $post->created_at->format('M d, Y') }}</time>
+                                            <span aria-hidden="true"> &middot; </span>
+                                            <span> {{ \App\Helpers\TextHelpers::getReadTime($post->renderBlocks()) }} read </span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <a href="#" class="inline-block">
-                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800"> Case Study </span>
-                            </a>
-                        </div>
-                        <a href="#" class="block mt-4">
-                            <p class="text-xl font-semibold text-gray-900">Improve your customer experience</p>
-                            <p class="mt-3 text-base text-gray-500">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab iure iusto fugiat commodi sequi.</p>
-                        </a>
-                        <div class="mt-6 flex items-center">
-                            <div class="flex-shrink-0">
-                                <a href="#">
-                                    <span class="sr-only">Easer Collins</span>
-                                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                                </a>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <a href="#"> Easer Collins </a>
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="2020-02-12"> Feb 12, 2020 </time>
-                                    <span aria-hidden="true"> &middot; </span>
-                                    <span> 11 min read </span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
     </x-app.page>
 @endsection

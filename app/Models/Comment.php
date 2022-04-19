@@ -6,6 +6,8 @@ use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\HasNesting;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
+use App\Models\Presenters\CommentPresenter;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Comment extends Model implements Sortable
 {
@@ -17,5 +19,22 @@ class Comment extends Model implements Sortable
         'description',
         'position',
     ];
-    
+
+
+    public string $presenterAdmin = CommentPresenter::class;
+
+    protected $casts = [
+        'approved' => 'boolean'
+    ];
+
+    public function commentable(): MorphTo
+    {
+        return $this->morphTo();
+    }
+
+    public function getTitleInDashboardAttribute()
+    {
+        return $this->comment;
+    }
+
 }

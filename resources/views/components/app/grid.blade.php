@@ -1,5 +1,5 @@
-@props(['grid' => 'grid-cols-2'])
+@props(['grid' => 'sm:grid-cols-2'])
 
-<div {{ $attributes->class($grid . ' grid gap-10') }}>
+<div {{ $attributes->class($grid . ' grid gap-7 grid-cols-1 md:gap-10 ') }}>
     {{ $slot }}
 </div>

@@ -13,7 +13,7 @@ window.form = () => {
                 await axios.post('/blog',data)
                 this.$root.querySelectorAll('input').forEach(e => e.value = '')
                 this.sended = true
-                setTimeout(() => this.sended = false, 10000)
+                setTimeout(() => this.sended = false, 5000)
             } catch {} finally {
                 this.loading = false
             }

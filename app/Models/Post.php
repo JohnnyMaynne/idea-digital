@@ -8,14 +8,16 @@ use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
 use App\Traits\HasAuthor;
+use App\Traits\HasComments;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
 use CyrildeWit\EloquentViewable\Contracts\Viewable;
 use CyrildeWit\EloquentViewable\InteractsWithViews;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use willvincent\Rateable\Rateable;
 
 class Post extends Model implements Viewable
 {
-    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasMetadata, HasAuthor, InteractsWithViews;
+    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasMetadata, HasAuthor, HasComments, InteractsWithViews, Rateable;
 
     public $metadataFallbacks = [];
 

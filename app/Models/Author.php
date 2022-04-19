@@ -32,7 +32,7 @@ class Author extends Model implements Sortable
             'default' => [
                 [
                     'name' => 'default',
-                    'ratio' => 9 / 16,
+                    'ratio' => 1,
                 ],
             ],
         ],

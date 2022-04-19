@@ -1,3 +1,5 @@
+@props(['posts'])
+
 <x-app.section>
     <x-app.container>
         <x-app.grid>
@@ -9,9 +11,9 @@
         </x-app.grid>
         <div class="mt-16">
             <x-app.grid>
-                @for ($i = 0; $i < 4; $i++)
-                    <x-blog.article-card/>
-                @endfor
+               @foreach($posts as $post)
+                    <x-blog.article-card :post="$post"/>
+               @endforeach
             </x-app.grid>
         </div>
     </x-app.container>

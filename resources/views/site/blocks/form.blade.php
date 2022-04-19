@@ -20,6 +20,7 @@
                 </button>
 
             </div>
+
             <div style="display: none" x-show="sended" x-transition class="p-4 flex items-center justify-between bg-white text-sm font-medium text-gray-900 rounded-md">
                 <div>Your message has been sent 😃</div>
                 <button type="button" class="p-2" @click="sended = false">

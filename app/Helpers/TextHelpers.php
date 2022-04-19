@@ -26,7 +26,7 @@ class TextHelpers
 
     public static function getExcerpt($content, $cont = 15): string
     {
-        return Str::words(strip_tags($content), $cont, '...');
+        return html_entity_decode(Str::words(strip_tags($content), $cont, '...'));
     }
 
 

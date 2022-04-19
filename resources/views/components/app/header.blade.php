@@ -5,7 +5,13 @@
 
 
 @php
-    $items = ['Seo','Cases','About Us','Blog','Contacts']
+    $items = [
+        ['route' => route('seo'),'title' => 'Seo' ],
+        ['route' => route('blog'),'title' => 'Cases' ],
+        ['route' => route('about-us'),'title' => 'About Us' ],
+        ['route' => route('blog'),'title' => 'Blog' ],
+        ['route' => route('contacts'),'title' => 'Contacts' ],
+];
 @endphp
 
 
@@ -18,7 +24,7 @@
             <ul class="text-lg leading-none flex items-center">
                 @foreach($items as $item)
                     <li>
-                        <a class="px-8 py-4 font-medium" href="#">{{ $item }}</a>
+                        <a class="px-8 py-4 font-medium" href="{{ $item['route'] }}">{{ $item['title'] }}</a>
                     </li>
                 @endforeach
                     <li>

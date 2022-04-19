@@ -22,13 +22,11 @@
             </x-app.container>
         </x-app.section>
 
-
         <x-app.section class="pt-0 py-14">
             <x-app.container>
                 <img src="https://unsplash.com/photos/tZc3vjPCk-Q/download?ixid=MnwxMjA3fDB8MXxjb2xsZWN0aW9ufDI2fDE4NTc4Nzl8fHx8fDJ8fDE2NTAxMTc2OTU&force=true&w=1920" alt="">
             </x-app.container>
         </x-app.section>
-
 
         <x-app.section class="py-14">
             <x-app.container>
@@ -60,8 +58,6 @@
                 </x-app.grid>
             </x-app.container>
         </x-app.section>
-
-
 
         <x-app.section class="py-14">
             <x-app.container>
@@ -260,9 +256,9 @@
         <x-app.section class="py-14">
             <x-app.container>
                 <x-app.grid>
-                    @for ($i = 0; $i < 4; $i++)
-                        <x-blog.article-card/>
-                    @endfor
+                    @foreach($posts as $post)
+                        <x-blog.article-card :post="$post"/>
+                    @endforeach
                 </x-app.grid>
             </x-app.container>
         </x-app.section>

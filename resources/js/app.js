@@ -1,5 +1,6 @@
 import lazyload from '@area17/a17-lazyload'
 import Alpine from 'alpinejs'
+import barba from '@barba/core'
 require('fslightbox')
 
 
@@ -8,14 +9,17 @@ require('./modules/form')
 require('./modules/hover')
 require('./modules/masonry')
 require('./modules/slider')
+require('./modules/comment')
+require('./modules/rating')
+require('./modules/helpers')
 
 // alpine js
 window.Alpine = Alpine
 Alpine.start()
 
 
-// init
-document.addEventListener('DOMContentLoaded',  () => {
+// bootstrap
+const bootstrap = () => {
     // lazyload
     lazyload()
 
@@ -23,6 +27,16 @@ document.addEventListener('DOMContentLoaded',  () => {
     if(fsLightboxInstances['first-lightbox'])  {
         fsLightboxInstances['first-lightbox'].open(0)
     }
+}
+
+// init
+document.addEventListener('DOMContentLoaded',bootstrap)
+
+// barba js
+barba.init()
+barba.hooks.enter(() => {
+    bootstrap()
+    window.scrollTo(0, 0)
 })
 
 
