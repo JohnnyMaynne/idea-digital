@@ -2,8 +2,16 @@
 
 @section('contentFields')
     @formField('input', [
-        'name' => 'description',
-        'label' => 'Description',
-        'maxlength' => 100
+        'name' => 'question',
+        'label' => 'Вопрос',
+        'maxlength' => 200
+    ])
+
+    @formField('wysiwyg', [
+        'name' => 'answer',
+        'label' => 'Ответ',
+        'type' => 'textarea',
+        'max' =>  1000,
+        'toolbarOptions' => ['bold','italic','underline','strike','link']
     ])
 @stop

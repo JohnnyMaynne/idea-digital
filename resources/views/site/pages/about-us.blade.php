@@ -7,7 +7,7 @@
         <x-about-us.tabs/>
         <x-about-us.about-us/>
         <x-about-us.team/>
-        <x-testimonials.grid class="py-20 border-b"/>
-        <x-clients.logos class="py-20"/>
+        <x-testimonials.grid :testimonials="$testimonials" class="py-20 border-b"/>
+        <x-clients.logos :clients="$clients" class="py-20"/>
     </x-app.page>
 @endsection

@@ -1,3 +1,5 @@
+@props(['clients'])
+
 <x-app.section {{$attributes->class('')}}>
     <x-app.container>
         <x-app.grid>
@@ -7,14 +9,20 @@
             </div>
         </x-app.grid>
         <div class="mt-16">
-            @for ($j = 0; $j < 3; $j++)
                 <div class="grid grid-cols-6">
-                @for ($i = 0; $i < 6; $i++)
-                    <div class="px-8">
-                        <img src="https://www.svgrepo.com/show/303143/microsoft-logo.svg" alt="">
-                    </div>
-                @endfor
-            </div>
+                @for ($i = 0; $i < 3; $i++)
+                    @foreach($clients as $client)
+                        @php
+                            $image = $client->imageAsArray('cover','default')
+                        @endphp
+                        <div class="px-2">
+                            <img
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                data-src="{{ $image['src'] }}"
+                                title="{{ $image['src'] }}"
+                                alt="{{ $image['src'] }}">
+                        </div>
+                    @endforeach
             @endfor
         </div>
     </x-app.container>

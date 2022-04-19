@@ -12,9 +12,9 @@ class Question extends Model implements Sortable
 
     protected $fillable = [
         'published',
-        'title',
-        'description',
+        'question',
+        'answer',
         'position',
     ];
-    
+
 }

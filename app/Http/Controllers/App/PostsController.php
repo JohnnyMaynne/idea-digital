@@ -4,10 +4,14 @@ namespace App\Http\Controllers\App;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\PostRepository;
+use CwsDigital\TwillMetadata\Traits\SetsMetadata;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
+
+    use setsMetadata;
+
     private PostRepository $post;
 
 
@@ -22,6 +26,8 @@ class PostsController extends Controller
         $item = $this->post->forSlug(request('slug')) ?? abort(404);
 
         views($item)->record();
+
+        $this->setMetadata($item);
 
         return view('site.pages.blog-single',[
             'item' => $item,

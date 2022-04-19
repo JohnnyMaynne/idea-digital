@@ -31,7 +31,6 @@
 
     @formField('block_editor', [
         'blocks' => ['text','quote','image','article','slider','masonry','form'],
-        'withoutSeparator' => true
     ])
 @stop
 

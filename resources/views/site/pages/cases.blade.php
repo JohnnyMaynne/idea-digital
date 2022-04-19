@@ -18,9 +18,9 @@
        <div>
             <x-app.container>
                 <x-app.grid>
-                    @for ($i = 0; $i < 12; $i++)
-                        <x-blog.article-card/>
-                    @endfor
+                    @foreach($posts as $post)
+                        <x-blog.article-card :post="$post"/>
+                    @endforeach
                 </x-app.grid>
             </x-app.container>
        </div>

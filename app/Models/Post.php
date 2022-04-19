@@ -13,9 +13,11 @@ use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
 use CyrildeWit\EloquentViewable\Contracts\Viewable;
 use CyrildeWit\EloquentViewable\InteractsWithViews;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\Searchable\Searchable;
 use willvincent\Rateable\Rateable;
+use Spatie\Searchable\SearchResult;
 
-class Post extends Model implements Viewable
+class Post extends Model implements Viewable, Searchable
 {
     use HasBlocks, HasSlug, HasMedias, HasRevisions, HasMetadata, HasAuthor, HasComments, InteractsWithViews, Rateable;
 
@@ -49,6 +51,17 @@ class Post extends Model implements Viewable
             ],
         ],
     ];
+
+    public function getSearchResult(): SearchResult
+    {
+        $url = route('blog.single', $this->slug);
+
+        return new \Spatie\Searchable\SearchResult(
+            $this,
+            $this->title,
+            $url,
+        );
+    }
 
     public function category(): BelongsTo
     {

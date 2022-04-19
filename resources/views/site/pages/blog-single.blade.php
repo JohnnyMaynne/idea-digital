@@ -32,9 +32,9 @@
                         </ol>
                     </nav>
 
-                    <div class="text-7xl max-w-[900px] max-w-3xl font-bold text-white">
+                    <h1 class="text-7xl max-w-3xl font-bold text-white">
                         {{ $item->title }}
-                    </div>
+                    </h1>
 
                     <div class="mt-8 flex items-center space-x-8">
                         <a href="{{ route('author',['slug' => $item->author->slug]) }}" class="font-medium flex items-center space-x-2 text-white">
@@ -68,7 +68,7 @@
                                 <line x1="8" y1="9" x2="16" y2="9"></line>
                                 <line x1="8" y1="13" x2="14" y2="13"></line>
                             </svg>
-                            <span>5 comments</span>
+                            <span>{{ count($item->comments) }} comments</span>
                         </div>
                     </div>
 

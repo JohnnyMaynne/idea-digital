@@ -9,11 +9,18 @@ use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
+use App\Traits\HasAuthor;
+use App\Traits\HasComments;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
+use CyrildeWit\EloquentViewable\Contracts\Viewable;
+use CyrildeWit\EloquentViewable\InteractsWithViews;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
 
-class Work extends Model implements Sortable
+class Work extends Model implements Sortable, Viewable, Searchable
 {
-    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasPosition, HasMetadata;
+    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasPosition, HasMetadata, HasAuthor, HasComments, InteractsWithViews;
 
     public $metadataFallbacks = [];
 
@@ -33,29 +40,26 @@ class Work extends Model implements Sortable
             'default' => [
                 [
                     'name' => 'default',
-                    'ratio' => 16 / 9,
-                ],
-            ],
-            'mobile' => [
-                [
-                    'name' => 'mobile',
                     'ratio' => 1,
-                ],
-            ],
-            'flexible' => [
-                [
-                    'name' => 'free',
-                    'ratio' => 0,
-                ],
-                [
-                    'name' => 'landscape',
-                    'ratio' => 16 / 9,
-                ],
-                [
-                    'name' => 'portrait',
-                    'ratio' => 3 / 5,
                 ],
             ],
         ],
     ];
+
+    public function testimonial(): HasOne
+    {
+        return $this->hasOne(Work::class);
+    }
+
+
+    public function getSearchResult(): SearchResult
+    {
+        $url = route('cases.single', $this->slug);
+
+        return new \Spatie\Searchable\SearchResult(
+            $this,
+            $this->title,
+            $url,
+        );
+    }
 }

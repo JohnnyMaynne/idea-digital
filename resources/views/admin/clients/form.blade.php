@@ -2,8 +2,12 @@
 
 @section('contentFields')
     @formField('input', [
-        'name' => 'description',
-        'label' => 'Description',
-        'maxlength' => 100
+        'name' => 'title',
+        'label' => 'Клиент',
+        'maxlength' => 200
+    ])
+    @formField('medias', [
+        'name' => 'cover',
+        'label' => 'Логотип',
     ])
 @stop

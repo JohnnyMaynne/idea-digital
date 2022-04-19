@@ -8,6 +8,8 @@ class QuestionController extends BaseModuleController
 {
     protected $moduleName = 'questions';
 
+    protected $titleColumnKey = 'question';
+
     protected $indexOptions = [
         'permalink' => false,
     ];

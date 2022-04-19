@@ -18,4 +18,21 @@ class WorkRepository extends ModuleRepository
     {
         $this->model = $model;
     }
+
+
+    public function getFormFields($object): array
+    {
+        $fields = parent::getFormFields($object);
+
+        $fields['author_id'] = $object->getAuthor()->id ?? null;
+
+        return $fields;
+    }
+
+    public function afterSave($object, $fields)
+    {
+        $object->author()->sync($fields['author_id'] ?? []);
+
+        parent::afterSave($object, $fields);
+    }
 }

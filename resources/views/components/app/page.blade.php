@@ -7,5 +7,7 @@
         {{ $slot }}
     </main>
 
+    <x-app.breadcrumbs/>
+
     <x-app.footer/>
 </div>

@@ -10,7 +10,7 @@
                     <p>Idea Digital Agency team inspires trust in our clients by delivering high-quality work and achieving tangible SEO results. Behind each and every one of our SEO promotion campaigns is a dedicated friendly team of passionate individuals, committed to achieving great results in SERP. </p>
                     <p>Our main goal is to help you measure, understand, and maximize your online potential. Our diverse client portfolio includes companies operating in SaaS, Financial Services, eCommerce, Manufacturing, etc.</p>
                 </div>
-                <x-app.read-more class="mt-12">Contacts with us</x-app.read-more>
+                <x-app.read-more :href="route('contacts')" class="mt-12">Contacts with us</x-app.read-more>
             </div>
         </x-app.grid>
     </x-app.container>

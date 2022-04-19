@@ -9,12 +9,13 @@ use A17\Twill\Repositories\Behaviors\HandleRevisions;
 use A17\Twill\Repositories\ModuleRepository;
 use App\Models\Author;
 use App\Models\Post;
+use App\Traits\HandleMethods;
 use Arr;
 use CwsDigital\TwillMetadata\Repositories\Behaviours\HandleMetadata;
 
 class PostRepository extends ModuleRepository
 {
-    use HandleBlocks, HandleSlugs, HandleMedias, HandleRevisions, HandleMetadata;
+    use HandleBlocks, HandleSlugs, HandleMedias, HandleRevisions, HandleMetadata, HandleMethods;
 
     public function __construct(Post $model)
     {
@@ -38,20 +39,5 @@ class PostRepository extends ModuleRepository
         parent::afterSave($object, $fields);
     }
 
-
-    public function latest($limit = 4)
-    {
-        return $this->model->latest()->limit($limit)->get();
-     }
-
-    public function related($post, $limit = 3)
-    {
-        return $this->model
-            ->whereCategoryId($post->category_id)
-            ->where('id','!=',$post->id)
-            ->latest()
-            ->limit($limit)
-            ->get();
-     }
 
 }

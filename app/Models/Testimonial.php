@@ -7,6 +7,7 @@ use A17\Twill\Models\Behaviors\HasFiles;
 use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Testimonial extends Model implements Sortable
 {
@@ -14,39 +15,27 @@ class Testimonial extends Model implements Sortable
 
     protected $fillable = [
         'published',
-        'title',
-        'description',
+        'name',
+        'post',
+        'work_id',
+        'text',
         'position',
     ];
-    
+
     public $mediasParams = [
         'cover' => [
             'default' => [
                 [
                     'name' => 'default',
-                    'ratio' => 16 / 9,
-                ],
-            ],
-            'mobile' => [
-                [
-                    'name' => 'mobile',
                     'ratio' => 1,
-                ],
-            ],
-            'flexible' => [
-                [
-                    'name' => 'free',
-                    'ratio' => 0,
-                ],
-                [
-                    'name' => 'landscape',
-                    'ratio' => 16 / 9,
-                ],
-                [
-                    'name' => 'portrait',
-                    'ratio' => 3 / 5,
                 ],
             ],
         ],
     ];
+
+
+    public function work(): BelongsTo
+    {
+        return $this->belongsTo(Work::class);
+    }
 }

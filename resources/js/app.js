@@ -12,6 +12,8 @@ require('./modules/slider')
 require('./modules/comment')
 require('./modules/rating')
 require('./modules/helpers')
+require('./modules/search')
+require('./modules/faq')
 
 // alpine js
 window.Alpine = Alpine

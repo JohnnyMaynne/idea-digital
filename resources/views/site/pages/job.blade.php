@@ -19,7 +19,7 @@
                             <p>We are united by our values, goals, team building and corporate training. We are constantly growing, developing and looking for talent.</p>
                             <p>Contact us if you want to become a part of our team, and let's get to know each other!</p>
                         </div>
-                        <x-app.read-more class="mt-12">Send CV</x-app.read-more>
+                        <x-app.read-more href="mailto:hr@ideadigital.agency" class="mt-12">Send CV</x-app.read-more>
                     </div>
                 </x-app.grid>
             </x-app.container>

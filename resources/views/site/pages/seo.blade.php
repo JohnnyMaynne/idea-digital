@@ -15,7 +15,7 @@
                     <div class="space-y-5">
                         <div class="prose text-gray-900 min-w-full">
                             <p>We help businesses to develop flexible and comprehensive online marketing plans and strategies to outperform market competition and acquire more customers from organic search.</p>
-                            <x-app.read-more>View cases</x-app.read-more>
+                            <x-app.read-more :href="route('cases')">View cases</x-app.read-more>
                         </div>
                     </div>
                 </x-app.grid>

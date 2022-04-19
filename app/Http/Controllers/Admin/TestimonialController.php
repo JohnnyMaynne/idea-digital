@@ -8,6 +8,8 @@ class TestimonialController extends BaseModuleController
 {
     protected $moduleName = 'testimonials';
 
+    protected $titleColumnKey = 'name';
+
     protected $indexOptions = [
         'permalink' => false,
     ];

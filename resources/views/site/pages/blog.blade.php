@@ -12,7 +12,6 @@
             </div>
         </div>
 
-
         <div class="border-b">
             <x-app.container>
                 <ul class="flex items-center space-x-6">

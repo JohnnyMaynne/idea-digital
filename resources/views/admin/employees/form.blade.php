@@ -1,9 +1,14 @@
 @extends('twill::layouts.form')
 
 @section('contentFields')
+    @formField('medias', [
+        'name' => 'cover',
+        'label' => 'Фото',
+    ])
+
     @formField('input', [
         'name' => 'description',
-        'label' => 'Description',
-        'maxlength' => 100
+        'label' => 'Должность',
+        'maxlength' => 200
     ])
 @stop

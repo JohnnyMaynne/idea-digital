@@ -11,7 +11,7 @@ class CreateWorksTables extends Migration
         Schema::create('works', function (Blueprint $table) {
             createDefaultTableFields($table);
             $table->string('title', 200)->nullable();
-            $table->text('description')->nullable();
+            $table->text('description',1000)->nullable();
             $table->integer('position')->unsigned()->nullable();
              $table->timestamp('publish_start_date')->nullable();
              $table->timestamp('publish_end_date')->nullable();

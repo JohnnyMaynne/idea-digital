@@ -23,5 +23,12 @@ return [
                 ],
             ],
         ],
+    ],
+    'glide' => [
+        'default_params' => [
+            'fm' => 'jpg',
+            'q' => '100',
+            'fit' => 'max',
+        ],
     ]
 ];

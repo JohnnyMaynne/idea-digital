@@ -10,8 +10,10 @@ use A17\Twill\Models\Model;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
 
-class Author extends Model implements Sortable
+class Author extends Model implements Sortable, Searchable
 {
     use HasSlug, HasMedias, HasPosition, HasMetadata;
 
@@ -37,6 +39,17 @@ class Author extends Model implements Sortable
             ],
         ],
     ];
+
+    public function getSearchResult(): SearchResult
+    {
+        $url = route('author', $this->slug);
+
+        return new \Spatie\Searchable\SearchResult(
+            $this,
+            $this->title,
+            $url,
+        );
+    }
 
 
     public function posts(): MorphToMany

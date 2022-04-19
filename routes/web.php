@@ -1,14 +1,19 @@
 <?php
 
+use App\Http\Controllers\App\AboutUsPageController;
 use App\Http\Controllers\App\AuthorsController;
 use App\Http\Controllers\App\BlogFormController;
 use App\Http\Controllers\App\BlogPageController;
+use App\Http\Controllers\App\CasesController;
 use App\Http\Controllers\App\CommentsController;
 use App\Http\Controllers\App\HomeController;
 use App\Http\Controllers\App\PostCategoriesController;
 use App\Http\Controllers\App\PostsController;
 use App\Http\Controllers\App\RatingsController;
+use App\Http\Controllers\App\SearchController;
 use App\Http\Controllers\App\SeoPageController;
+use App\Http\Controllers\App\TeamPageController;
+use App\Http\Controllers\App\TestimonialsPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,17 +33,18 @@ Route::get('/', HomeController::class)->name('home');
 // seo page
 Route::get('seo', SeoPageController::class)->name('seo');
 
-
-Route::view('about-us', 'site.pages.about-us')->name('about-us');
-Route::view('team', 'site.pages.team')->name('team');
-Route::view('testimonials', 'site.pages.testimonials')->name('testimonials');
+// pages
+Route::get('about-us', AboutUsPageController::class)->name('about-us');
+Route::get('team', TeamPageController::class)->name('team');
+Route::get('testimonials', TestimonialsPageController::class)->name('testimonials');
 Route::view('job', 'site.pages.job')->name('job');
+Route::view('contacts', 'site.pages.contacts')->name('contacts');
 
 // blog
 Route::get('blog', BlogPageController::class)->name('blog');
 Route::get('blog/{slug}', PostsController::class)->name('blog.single');
 Route::get('blog/category/{slug}', PostCategoriesController::class)->name('blog.category');
-//
+// ajax
 Route::post('blog', BlogFormController::class)->name('blog.form');
 
 // author
@@ -52,7 +58,10 @@ Route::post('comments', CommentsController::class)->name('comments.store');
 Route::post('ratings/{post}', RatingsController::class)->name('ratings.store');
 
 
-Route::view('cases', 'site.pages.cases')->name('cases');
-Route::view('cases/{slug}', 'site.pages.cases-single')->name('cases.single');
-Route::view('contacts', 'site.pages.contacts')->name('contacts');
+// search
+Route::post('search', SearchController::class)->name('search');
+
+// cases
+Route::get('cases', [CasesController::class,'index'])->name('cases');
+Route::get('cases/{slug}',[CasesController::class,'show'] )->name('cases.single');
 
