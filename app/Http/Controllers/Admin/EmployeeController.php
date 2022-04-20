@@ -10,5 +10,6 @@ class EmployeeController extends BaseModuleController
 
     protected $indexOptions = [
         'permalink' => false,
+        'reorder' => true,
     ];
 }

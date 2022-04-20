@@ -8,11 +8,12 @@ use A17\Twill\Repositories\Behaviors\HandleMedias;
 use A17\Twill\Repositories\Behaviors\HandleRevisions;
 use A17\Twill\Repositories\ModuleRepository;
 use App\Models\Work;
+use App\Traits\HandleMethods;
 use CwsDigital\TwillMetadata\Repositories\Behaviours\HandleMetadata;
 
 class WorkRepository extends ModuleRepository
 {
-    use HandleBlocks, HandleSlugs, HandleMedias, HandleRevisions, HandleMetadata;
+    use HandleBlocks, HandleSlugs, HandleMedias, HandleRevisions, HandleMetadata, HandleMethods;
 
     public function __construct(Work $model)
     {

@@ -26,7 +26,7 @@ return [
             ],
 
             'authors' => [
-                'title' => 'Доп. материалы',
+                'title' => 'Материалы',
                 'module' => true,
                 'secondary_navigation' => [
                     'authors' => [

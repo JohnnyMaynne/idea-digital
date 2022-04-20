@@ -12,5 +12,6 @@ class QuestionController extends BaseModuleController
 
     protected $indexOptions = [
         'permalink' => false,
+        'reorder' => true,
     ];
 }

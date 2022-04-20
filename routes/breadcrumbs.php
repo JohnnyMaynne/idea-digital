@@ -2,6 +2,7 @@
 
 
 use App\Models\PostCategory;
+use App\Models\Vacancy;
 use App\Models\Work;
 use Tabuna\Breadcrumbs\Trail;
 
@@ -40,6 +41,15 @@ Breadcrumbs::for('job', fn (Trail $trail) =>
         ->parent('home')
         ->push('Job', route('job'))
 );
+
+// job show
+Breadcrumbs::for('job.show', function (Trail $trail, string $slug) {
+    $current = Vacancy::forSlug($slug)->first();
+
+    $trail
+        ->parent('job')
+        ->push($current->title, route('job.show', ['slug' => $current->slug]));
+});
 
 // blog
 Breadcrumbs::for('blog', fn (Trail $trail) =>

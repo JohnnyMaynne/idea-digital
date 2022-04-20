@@ -8,7 +8,10 @@ class VacancyController extends BaseModuleController
 {
     protected $moduleName = 'vacancies';
 
+    protected $permalinkBase = 'jobs';
+
     protected $indexOptions = [
+        'reorder' => true
     ];
 
     protected function formData($request)

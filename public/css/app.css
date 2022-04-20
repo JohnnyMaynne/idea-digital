@@ -1147,6 +1147,9 @@ select {
 .mt-20 {
   margin-top: 5rem;
 }
+.mr-2 {
+  margin-right: 0.5rem;
+}
 .block {
   display: block;
 }
@@ -2218,6 +2221,11 @@ a:hover .mini-preview-wrapper {
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
+.group:hover .group-hover\:text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
 .group:hover .group-hover\:opacity-70 {
   opacity: 0.7;
 }
@@ -2285,6 +2293,10 @@ a:hover .mini-preview-wrapper {
 
   .sm\:ml-6 {
     margin-left: 1.5rem;
+  }
+
+  .sm\:ml-4 {
+    margin-left: 1rem;
   }
 
   .sm\:flex {

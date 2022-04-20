@@ -9,6 +9,7 @@ class AuthorController extends BaseModuleController
     protected $moduleName = 'authors';
 
     protected $indexOptions = [
+        'reorder' => true
     ];
 
     protected function formData($request)

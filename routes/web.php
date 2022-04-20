@@ -14,6 +14,7 @@ use App\Http\Controllers\App\SearchController;
 use App\Http\Controllers\App\SeoPageController;
 use App\Http\Controllers\App\TeamPageController;
 use App\Http\Controllers\App\TestimonialsPageController;
+use App\Http\Controllers\App\VacanciesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,7 +38,6 @@ Route::get('seo', SeoPageController::class)->name('seo');
 Route::get('about-us', AboutUsPageController::class)->name('about-us');
 Route::get('team', TeamPageController::class)->name('team');
 Route::get('testimonials', TestimonialsPageController::class)->name('testimonials');
-Route::view('job', 'site.pages.job')->name('job');
 Route::view('contacts', 'site.pages.contacts')->name('contacts');
 
 // blog
@@ -46,6 +46,15 @@ Route::get('blog/{slug}', PostsController::class)->name('blog.single');
 Route::get('blog/category/{slug}', PostCategoriesController::class)->name('blog.category');
 // ajax
 Route::post('blog', BlogFormController::class)->name('blog.form');
+
+
+// cases
+Route::get('cases', [CasesController::class,'index'])->name('cases');
+Route::get('cases/{slug}',[CasesController::class,'show'] )->name('cases.single');
+
+// vacancies
+Route::get('jobs', [VacanciesController::class,'index'])->name('job');
+Route::get('jobs/{slug}', [VacanciesController::class,'show'])->name('job.show');
 
 // author
 Route::get('/authors/{slug}', AuthorsController::class)->name('author');
@@ -60,8 +69,4 @@ Route::post('ratings/{post}', RatingsController::class)->name('ratings.store');
 
 // search
 Route::post('search', SearchController::class)->name('search');
-
-// cases
-Route::get('cases', [CasesController::class,'index'])->name('cases');
-Route::get('cases/{slug}',[CasesController::class,'show'] )->name('cases.single');
 
