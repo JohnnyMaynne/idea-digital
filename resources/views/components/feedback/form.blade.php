@@ -7,32 +7,46 @@
             </div>
         </x-app.grid>
         <x-app.grid class="mt-16">
-            <div class="space-y-8">
+            <form x-data="feedback()" @submit.prevent="handler()" class="space-y-8">
                 <div class="isolate -space-y-px rounded-md shadow-sm">
                     <div class="relative border border-gray-300 rounded-md rounded-b-none p-3  focus-within:z-10 focus-within:ring-1 focus-within:ring-blue-600 focus-within:border-blue-600">
                         <label for="name" class="block text-sm font-medium text-gray-900">Name</label>
-                        <input type="text" name="name" id="name" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm mt-1" placeholder="Jane Doe">
+                        <input required type="text" x-model="form.name" id="name" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm mt-1" placeholder="Jane Doe">
                     </div>
                     <div class="relative border border-gray-300  p-3  focus-within:z-10 focus-within:ring-1 focus-within:ring-blue-600 focus-within:border-blue-600">
                         <label for="job-title" class="block text-sm font-medium text-gray-900">Email</label>
-                        <input type="text" name="job-title" id="job-title" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm mt-1" placeholder="example@example.com">
+                        <input required type="email" x-model="form.email" id="job-title" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm mt-1" placeholder="example@example.com">
                     </div>
                     <div class="relative border border-gray-300 p-3  focus-within:z-10 focus-within:ring-1 focus-within:ring-blue-600 focus-within:border-blue-600">
-                        <label for="job-title" class="block text-sm font-medium text-gray-900">Your Phone</label>
-                        <input type="text" name="job-title" id="job-title" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm mt-1" placeholder="+380 00 000 00 00">
+                        <label for="phone" class="block text-sm font-medium text-gray-900">Your Phone</label>
+                        <input required type="text" x-model="form.phone" id="phone" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm mt-1" placeholder="+380 00 000 00 00">
                     </div>
                     <div class="relative border border-gray-300  p-3  focus-within:z-10 focus-within:ring-1 focus-within:ring-blue-600 focus-within:border-blue-600">
-                        <label for="job-title" class="block text-sm font-medium text-gray-900">Company</label>
-                        <input type="text" name="job-title" id="job-title" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm mt-1" placeholder="Microsoft">
+                        <label for="company" class="block text-sm font-medium text-gray-900">Company</label>
+                        <input type="text" x-model="form.company" id="company" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm mt-1" placeholder="Microsoft">
                     </div>
                     <div class="relative border border-gray-300 rounded-md rounded-t-none p-3  focus-within:z-10 focus-within:ring-1 focus-within:ring-blue-600 focus-within:border-blue-600">
-                        <label for="job-title" class="block text-sm font-medium text-gray-900">Message</label>
-                        <input type="text" name="job-title" id="job-title" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm mt-1" placeholder="Let's work together">
+                        <label for="message" class="block text-sm font-medium text-gray-900">Message</label>
+                        <input type="text" x-model="form.message" id="message" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm mt-1" placeholder="Let's work together">
                     </div>
                 </div>
 
-                <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Send request</button>
-            </div>
+                <div style="display: none" x-show="sended" x-transition class="p-4 bg-gray-100 flex items-center justify-between bg-white text-sm font-medium text-gray-900 rounded-md">
+                    <div>Your message has been sent 😃</div>
+                    <button type="button" class="p-2" @click="sended = false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+
+                <button type="submit" :disabled="loading" :class="[loading ? 'bg-gray-700 cursor-not-allowed' : 'bg-gray-900 hover:bg-gray-700']" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white focus:outline-none">
+                    <span x-show="!loading">Send request</span>
+                    <span style="display:none;"  x-show="loading">Sending...</span>
+                </button>
+            </form>
             <div>
                 <p class="text-gray-500">
                     Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.

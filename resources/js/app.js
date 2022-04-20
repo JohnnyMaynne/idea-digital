@@ -14,6 +14,7 @@ require('./modules/rating')
 require('./modules/helpers')
 require('./modules/search')
 require('./modules/faq')
+require('./modules/feedback')
 
 // alpine js
 window.Alpine = Alpine

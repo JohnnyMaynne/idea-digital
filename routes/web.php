@@ -6,6 +6,7 @@ use App\Http\Controllers\App\BlogFormController;
 use App\Http\Controllers\App\BlogPageController;
 use App\Http\Controllers\App\CasesController;
 use App\Http\Controllers\App\CommentsController;
+use App\Http\Controllers\App\FeedbackController;
 use App\Http\Controllers\App\HomeController;
 use App\Http\Controllers\App\PostCategoriesController;
 use App\Http\Controllers\App\PostsController;
@@ -69,4 +70,8 @@ Route::post('ratings/{post}', RatingsController::class)->name('ratings.store');
 
 // search
 Route::post('search', SearchController::class)->name('search');
+
+
+// feedback
+Route::post('feedback', FeedbackController::class)->name('feedback');
 
