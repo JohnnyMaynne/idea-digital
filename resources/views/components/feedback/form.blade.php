@@ -31,7 +31,13 @@
                     </div>
                 </div>
 
-                <div style="display: none" x-show="sended" x-transition class="p-4 bg-gray-100 flex items-center justify-between bg-white text-sm font-medium text-gray-900 rounded-md">
+                <button type="submit" x-show="!sended" :disabled="loading" :class="[loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-900 hover:bg-gray-700']" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white focus:outline-none">
+                    <span x-show="!loading">Send request</span>
+                    <span style="display:none;"  x-show="loading">Sending...</span>
+                </button>
+
+
+                <div style="display: none" x-show="sended" class="p-4 bg-gray-100 flex items-center justify-between bg-white text-sm font-medium text-gray-900 rounded-md">
                     <div>Your message has been sent 😃</div>
                     <button type="button" class="p-2" @click="sended = false">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -41,11 +47,6 @@
                         </svg>
                     </button>
                 </div>
-
-                <button type="submit" :disabled="loading" :class="[loading ? 'bg-gray-700 cursor-not-allowed' : 'bg-gray-900 hover:bg-gray-700']" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white focus:outline-none">
-                    <span x-show="!loading">Send request</span>
-                    <span style="display:none;"  x-show="loading">Sending...</span>
-                </button>
             </form>
             <div>
                 <p class="text-gray-500">
