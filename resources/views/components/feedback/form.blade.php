@@ -1,4 +1,4 @@
-<x-app.section class="pb-0">
+<x-app.section>
     <x-app.container>
         <x-app.grid>
             <div>

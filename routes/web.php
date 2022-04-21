@@ -6,6 +6,7 @@ use App\Http\Controllers\App\BlogFormController;
 use App\Http\Controllers\App\BlogPageController;
 use App\Http\Controllers\App\CasesController;
 use App\Http\Controllers\App\CommentsController;
+use App\Http\Controllers\App\ContactsPageController;
 use App\Http\Controllers\App\FeedbackController;
 use App\Http\Controllers\App\HomeController;
 use App\Http\Controllers\App\PostCategoriesController;
@@ -39,7 +40,7 @@ Route::get('seo', SeoPageController::class)->name('seo');
 Route::get('about-us', AboutUsPageController::class)->name('about-us');
 Route::get('team', TeamPageController::class)->name('team');
 Route::get('testimonials', TestimonialsPageController::class)->name('testimonials');
-Route::view('contacts', 'site.pages.contacts')->name('contacts');
+Route::get('contacts', ContactsPageController::class)->name('contacts');
 
 // blog
 Route::get('blog', BlogPageController::class)->name('blog');

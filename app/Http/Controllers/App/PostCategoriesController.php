@@ -9,8 +9,6 @@ use CwsDigital\TwillMetadata\Traits\SetsMetadata;
 
 class PostCategoriesController extends Controller
 {
-
-
     use setsMetadata;
 
     private PostCategoryRepository $category;
@@ -27,6 +25,8 @@ class PostCategoriesController extends Controller
     public function __invoke($slug)
     {
         $category = $this->category->forSlug($slug) ?? abort(404);
+
+        $this->setMetadata($category);
 
         return view('site.pages.blog',[
             'category' => $category,
