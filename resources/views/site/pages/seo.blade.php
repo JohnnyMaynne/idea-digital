@@ -8,13 +8,13 @@
                 <x-app.grid>
                     <div>
                         <div class="text-7xl max-w-[900px] max-w-3xl font-bold">
-                            Search Engine Optimization Services
+                            {{ $page->title }}
                         </div>
                     </div>
 
                     <div class="space-y-5">
                         <div class="prose text-gray-900 min-w-full">
-                            <p>We help businesses to develop flexible and comprehensive online marketing plans and strategies to outperform market competition and acquire more customers from organic search.</p>
+                            {!! $page->description  !!}
                             <x-app.read-more :href="route('cases')">View cases</x-app.read-more>
                         </div>
                     </div>
@@ -73,170 +73,38 @@
 
         <x-app.section class="py-14">
             <x-app.container>
-                <x-app.grid>
+                <x-app.grid x-data="steps({{ json_encode($page->steps) }})">
                     <nav aria-label="Progress">
                         <ol role="list" class="overflow-hidden">
-                            <li class="relative pb-10">
-                                <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-blue-600" aria-hidden="true"></div>
-                                <!-- Complete Step -->
-                                <a href="#" class="relative flex items-start group">
-        <span class="h-9 flex items-center">
-          <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-blue-600 rounded-full group-hover:bg-blue-800">
-            <!-- Heroicon name: solid/check -->
-            <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-            </svg>
-          </span>
-        </span>
-                                    <span class="ml-4 min-w-0 flex flex-col">
-          <span class="text-xs font-semibold tracking-wide uppercase">Create account</span>
-          <span class="text-sm text-gray-500">Vitae sed mi luctus laoreet.</span>
-        </span>
-                                </a>
-                            </li>
+                            <template x-for="(step,index) in steps" :key="index">
+                                <li class="relative pb-10">
+                                    <div x-show="index !== steps.length - 1" :class="[index < current ? 'bg-blue-600' : ' bg-gray-300']" class="-ml-px transition absolute mt-0.5 top-4 left-4 w-0.5 h-full" aria-hidden="true"></div>
+                                    <a href="#" @click.prevent="select(index)" class="relative flex items-start group">
+                                        <span class="h-9 flex items-center" aria-hidden="true">
+                                              <span :class="[index <= current ? 'border-blue-600' : ' group-hover:border-gray-400']" class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full">
+                                                <span :class="[index <= current ? 'bg-blue-600' : ' group-hover:bg-gray-300']"  class="h-2.5 w-2.5 bg-transparent rounded-full"></span>
+                                              </span>
+                                        </span>
 
-                            <li class="relative pb-10">
-                                <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true"></div>
-                                <!-- Current Step -->
-                                <a href="#" class="relative flex items-start group" aria-current="step">
-        <span class="h-9 flex items-center" aria-hidden="true">
-          <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-blue-600 rounded-full">
-            <span class="h-2.5 w-2.5 bg-blue-600 rounded-full"></span>
-          </span>
-        </span>
-                                    <span class="ml-4 min-w-0 flex flex-col">
-          <span class="text-xs font-semibold tracking-wide uppercase text-blue-600">Profile information</span>
-          <span class="text-sm text-gray-500">Cursus semper viverra facilisis et et some more.</span>
-        </span>
-                                </a>
-                            </li>
-
-                            <li class="relative pb-10">
-                                <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true"></div>
-                                <!-- Upcoming Step -->
-                                <a href="#" class="relative flex items-start group">
-        <span class="h-9 flex items-center" aria-hidden="true">
-          <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">
-            <span class="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300"></span>
-          </span>
-        </span>
-                                    <span class="ml-4 min-w-0 flex flex-col">
-          <span class="text-xs font-semibold tracking-wide uppercase text-gray-500">Business information</span>
-          <span class="text-sm text-gray-500">Penatibus eu quis ante.</span>
-        </span>
-                                </a>
-                            </li>
-
-                            <li class="relative pb-10">
-                                <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true"></div>
-                                <!-- Upcoming Step -->
-                                <a href="#" class="relative flex items-start group">
-        <span class="h-9 flex items-center" aria-hidden="true">
-          <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">
-            <span class="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300"></span>
-          </span>
-        </span>
-                                    <span class="ml-4 min-w-0 flex flex-col">
-          <span class="text-xs font-semibold tracking-wide uppercase text-gray-500">Theme</span>
-          <span class="text-sm text-gray-500">Faucibus nec enim leo et.</span>
-        </span>
-                                </a>
-                            </li>
-
-                            <li class="relative pb-10">
-                                <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true"></div>
-                                <!-- Upcoming Step -->
-                                <a href="#" class="relative flex items-start group">
-        <span class="h-9 flex items-center" aria-hidden="true">
-          <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">
-            <span class="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300"></span>
-          </span>
-        </span>
-                                    <span class="ml-4 min-w-0 flex flex-col">
-          <span class="text-xs font-semibold tracking-wide uppercase text-gray-500">Theme</span>
-          <span class="text-sm text-gray-500">Faucibus nec enim leo et.</span>
-        </span>
-                                </a>
-                            </li>
-
-                            <li class="relative pb-10">
-                                <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true"></div>
-                                <!-- Upcoming Step -->
-                                <a href="#" class="relative flex items-start group">
-        <span class="h-9 flex items-center" aria-hidden="true">
-          <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">
-            <span class="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300"></span>
-          </span>
-        </span>
-                                    <span class="ml-4 min-w-0 flex flex-col">
-          <span class="text-xs font-semibold tracking-wide uppercase text-gray-500">Theme</span>
-          <span class="text-sm text-gray-500">Faucibus nec enim leo et.</span>
-        </span>
-                                </a>
-                            </li>
-
-                            <li class="relative pb-10">
-                                <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true"></div>
-                                <!-- Upcoming Step -->
-                                <a href="#" class="relative flex items-start group">
-        <span class="h-9 flex items-center" aria-hidden="true">
-          <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">
-            <span class="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300"></span>
-          </span>
-        </span>
-                                    <span class="ml-4 min-w-0 flex flex-col">
-          <span class="text-xs font-semibold tracking-wide uppercase text-gray-500">Theme</span>
-          <span class="text-sm text-gray-500">Faucibus nec enim leo et.</span>
-        </span>
-                                </a>
-                            </li>
-
-                            <li class="relative pb-10">
-                                <div class="-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300" aria-hidden="true"></div>
-                                <!-- Upcoming Step -->
-                                <a href="#" class="relative flex items-start group">
-        <span class="h-9 flex items-center" aria-hidden="true">
-          <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">
-            <span class="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300"></span>
-          </span>
-        </span>
-                                    <span class="ml-4 min-w-0 flex flex-col">
-          <span class="text-xs font-semibold tracking-wide uppercase text-gray-500">Theme</span>
-          <span class="text-sm text-gray-500">Faucibus nec enim leo et.</span>
-        </span>
-                                </a>
-                            </li>
-
-                            <li class="relative">
-                                <!-- Upcoming Step -->
-                                <a href="#" class="relative flex items-start group">
-        <span class="h-9 flex items-center" aria-hidden="true">
-          <span class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400">
-            <span class="h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300"></span>
-          </span>
-        </span>
-                                    <span class="ml-4 min-w-0 flex flex-col">
-          <span class="text-xs font-semibold tracking-wide uppercase text-gray-500">Preview</span>
-          <span class="text-sm text-gray-500">Iusto et officia maiores porro ad non quas.</span>
-        </span>
-                                </a>
-                            </li>
+                                        <span class="ml-4 min-w-0 flex flex-col">
+                                          <span :class="[index <= current ? 'text-gray-900' : 'text-gray-500']" class="transition text-xs font-semibold tracking-wide uppercase" x-text="step.title"></span>
+                                          <span :class="[index <= current ? 'text-gray-900' : 'text-gray-500']" class="transition text-sm" x-text="step.subtitle"></span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </template>
                         </ol>
                     </nav>
                     <div class="space-y-5">
-                        <div class="prose w-min-full">
-                            <h2>Analysis</h2>
-                            <p>We check the website for compliance with more than 40 requirements for the Google and Bing search engines, including technical and optimization errors.</p>
-                            <p>If we find technical errors on the website, we create a detailed task for developers to correct those bugs. After implementation, we check the developer’s work in accordance with the technical task.</p>
-                            <p>We collect target keywords according to the website's structure to create a full extended version of the website for potential development.</p>
-                            <p>We analyze competitors’ websites, their backlink profiles, and strategies they use to get higher rankings</p>
+                        <div class="prose w-min-full" x-html="steps[current].text">
                         </div>
-                        <div class="flex items-center justify-between">
-                            <div class="text-sm text-gray-500 font-medium">Step 1 of 9</div>
-                            <x-app.read-more>Next step</x-app.read-more>
+                        <div class="flex items-center h-12 justify-between">
+                            <div class="text-sm text-gray-500 font-medium">Step <span x-text="current + 1"></span> of <span x-text="steps.length">9</span></div>
+                            <div>
+                                <x-app.read-more x-show="current + 1 !== steps.length" @click.prevent="select(current+1)">Next step</x-app.read-more>
+                            </div>
                         </div>
                     </div>
-
                 </x-app.grid>
             </x-app.container>
         </x-app.section>
@@ -256,7 +124,7 @@
         <x-app.section class="py-14">
             <x-app.container>
                 <x-app.grid>
-                    @foreach($posts as $post)
+                    @foreach($page->getRelated('works') as $post)
                         <x-blog.article-card :post="$post"/>
                     @endforeach
                 </x-app.grid>

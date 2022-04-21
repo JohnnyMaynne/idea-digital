@@ -8,7 +8,7 @@
                     <img
                         data-src="{{ $image['src'] }}"
                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                        class="w-full h-auto shadow-2xl rounded block aspect-[180/90] bg-gray-100 transition"
+                        class="w-full h-auto object-cover shadow-2xl rounded block aspect-[180/90] bg-gray-100 transition"
                         alt="{{ $image['alt']  }}"
                         title="{{ $image['alt']  }}"
                     >

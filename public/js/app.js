@@ -5290,8 +5290,6 @@ __webpack_require__(/*! fslightbox */ "./node_modules/fslightbox/index.js"); // 
 
 __webpack_require__(/*! ./modules/form */ "./resources/js/modules/form.js");
 
-__webpack_require__(/*! ./modules/hover */ "./resources/js/modules/hover.js");
-
 __webpack_require__(/*! ./modules/masonry */ "./resources/js/modules/masonry.js");
 
 __webpack_require__(/*! ./modules/slider */ "./resources/js/modules/slider.js");
@@ -5306,19 +5304,21 @@ __webpack_require__(/*! ./modules/search */ "./resources/js/modules/search.js");
 
 __webpack_require__(/*! ./modules/faq */ "./resources/js/modules/faq.js");
 
-__webpack_require__(/*! ./modules/feedback */ "./resources/js/modules/feedback.js"); // alpine js
+__webpack_require__(/*! ./modules/feedback */ "./resources/js/modules/feedback.js");
+
+__webpack_require__(/*! ./modules/steps */ "./resources/js/modules/steps.js"); // alpine js
 
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start(); // bootstrap
 
 var bootstrap = function bootstrap() {
+  var _fsLightboxInstances$;
+
   // lazyload
   _area17_a17_lazyload__WEBPACK_IMPORTED_MODULE_0___default()(); // fslightbox
 
-  if (fsLightboxInstances['first-lightbox']) {
-    fsLightboxInstances['first-lightbox'].open(0);
-  }
+  (_fsLightboxInstances$ = fsLightboxInstances['first-lightbox']) === null || _fsLightboxInstances$ === void 0 ? void 0 : _fsLightboxInstances$.open(0);
 }; // init
 
 
@@ -5444,14 +5444,17 @@ window.feedback = function () {
     loading: false,
     sended: false,
     form: {
-      name: null,
+      first_name: null,
+      last_name: null,
       email: null,
       phone: null,
       company: null,
-      message: null
+      message: null,
+      budget: null,
+      source: null
     },
     resetForm: function resetForm() {
-      this.form.name = this.form.email = this.form.phone = this.form.company = this.form.message = null;
+      this.form.first_name = this.form.last_name = this.form.email = this.form.phone = this.form.company = this.form.message = this.form.budget = this.form.source = null;
     },
     handler: function handler() {
       var _this = this;
@@ -5584,69 +5587,8 @@ window.textarea = function () {
     },
     resize: function resize() {
       var el = this.$el;
-      el.style.height = '55px';
+      el.style.height = '100px';
       el.style.height = el.scrollHeight + 'px';
-    }
-  };
-};
-
-/***/ }),
-
-/***/ "./resources/js/modules/hover.js":
-/*!***************************************!*\
-  !*** ./resources/js/modules/hover.js ***!
-  \***************************************/
-/***/ (() => {
-
-window.hover = function () {
-  return {
-    sharedCounter: 0,
-    options: {
-      width: 256,
-      height: 144,
-      scale: .25,
-      prefetch: 'none'
-    },
-    target: null,
-    init: function init() {
-      this.createElements();
-      this.$watch('target', function (a) {
-        if (a) {
-          var preview = a.querySelector('.mini-preview-wrapper');
-          preview.querySelector('.mini-preview-frame').setAttribute('src', a.getAttribute('href'));
-        }
-      });
-    },
-    hover: function hover(event) {
-      if (event.target.tagName.toLowerCase() === 'a') {
-        this.target = event.target;
-      } else {
-        this.target = null;
-      }
-    },
-    createElements: function createElements() {
-      var links = this.$root.querySelectorAll('a[rel="noopener noreferrer"]');
-      var wrapper = document.createElement('span');
-      var loading = document.createElement('span');
-      var frame = document.createElement('iframe');
-      var cover = document.createElement('span');
-      wrapper.classList.add('mini-preview-wrapper');
-      loading.classList.add('mini-preview-loading');
-      frame.classList.add('mini-preview-frame');
-      cover.classList.add('mini-preview-cover');
-      wrapper.appendChild(loading);
-      wrapper.appendChild(frame);
-      wrapper.appendChild(cover);
-      wrapper.style.width = this.options.width + 'px';
-      wrapper.style.height = this.options.height + 'px';
-      var inversePercent = 100 / this.options.scale;
-      frame.style.width = inversePercent + '%';
-      frame.style.height = inversePercent + '%';
-      frame.style.transform = 'scale(' + this.options.scale + ')';
-      links.forEach(function (e) {
-        e.setAttribute('data-preview', 'preview');
-        e.appendChild(wrapper.cloneNode(true));
-      });
     }
   };
 };
@@ -5672,16 +5614,12 @@ window.masonry = function () {
   return {
     init: function init() {
       var node = this.$root;
-
-      window.onload = function () {
-        imagesloaded__WEBPACK_IMPORTED_MODULE_1___default()(node, function () {
-          new (masonry_layout__WEBPACK_IMPORTED_MODULE_0___default())(node, {
-            itemSelector: '.grid-item',
-            percentPosition: true,
-            horizontalOrder: true
-          });
+      imagesloaded__WEBPACK_IMPORTED_MODULE_1___default()(node, function () {
+        new (masonry_layout__WEBPACK_IMPORTED_MODULE_0___default())(node, {
+          itemSelector: '.grid-item',
+          percentPosition: true
         });
-      };
+      });
     }
   };
 };
@@ -5902,6 +5840,24 @@ window.slider = function () {
         }
       });
       swiper.on('slideChange', (_area17_a17_lazyload__WEBPACK_IMPORTED_MODULE_4___default()));
+    }
+  };
+};
+
+/***/ }),
+
+/***/ "./resources/js/modules/steps.js":
+/*!***************************************!*\
+  !*** ./resources/js/modules/steps.js ***!
+  \***************************************/
+/***/ (() => {
+
+window.steps = function (steps) {
+  return {
+    steps: steps,
+    current: 0,
+    select: function select(step) {
+      this.current = step;
     }
   };
 };

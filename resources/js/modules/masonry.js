@@ -6,15 +6,12 @@ window.masonry = () =>  {
         init() {
             let node = this.$root
 
-            window.onload = function() {
-                imagesLoaded(node, function () {
-                    new Masonry(node, {
-                        itemSelector: '.grid-item',
-                        percentPosition: true,
-                        horizontalOrder: true
-                    })
+            imagesLoaded(node, function () {
+                new Masonry(node, {
+                    itemSelector: '.grid-item',
+                    percentPosition: true,
                 })
-            }
+            })
         },
     }
 }

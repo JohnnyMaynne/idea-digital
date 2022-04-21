@@ -6,7 +6,6 @@ require('fslightbox')
 
 // modules
 require('./modules/form')
-require('./modules/hover')
 require('./modules/masonry')
 require('./modules/slider')
 require('./modules/comment')
@@ -15,6 +14,7 @@ require('./modules/helpers')
 require('./modules/search')
 require('./modules/faq')
 require('./modules/feedback')
+require('./modules/steps')
 
 // alpine js
 window.Alpine = Alpine
@@ -27,9 +27,7 @@ const bootstrap = () => {
     lazyload()
 
     // fslightbox
-    if(fsLightboxInstances['first-lightbox'])  {
-        fsLightboxInstances['first-lightbox'].open(0)
-    }
+    fsLightboxInstances['first-lightbox']?.open(0)
 }
 
 // init

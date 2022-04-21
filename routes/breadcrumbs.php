@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Models\Author;
 use App\Models\PostCategory;
 use App\Models\Vacancy;
 use App\Models\Work;
@@ -10,6 +11,13 @@ use Tabuna\Breadcrumbs\Trail;
 // home
 Breadcrumbs::for('home', fn (Trail $trail) =>
     $trail->push('Home', route('home'))
+);
+
+// seo
+Breadcrumbs::for('seo', fn (Trail $trail) =>
+    $trail
+        ->parent('home')
+        ->push('Seo service', route('seo'))
 );
 
 // about us
@@ -49,6 +57,15 @@ Breadcrumbs::for('job.show', function (Trail $trail, string $slug) {
     $trail
         ->parent('job')
         ->push($current->title, route('job.show', ['slug' => $current->slug]));
+});
+
+// author
+Breadcrumbs::for('author', function (Trail $trail, string $slug) {
+    $current = Author::forSlug($slug)->first();
+
+    $trail
+        ->parent('home')
+        ->push($current->title, route('author', ['slug' => $current->slug]));
 });
 
 // blog

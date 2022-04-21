@@ -14,11 +14,11 @@
                 </div>
 
                 <div class="mt-16 divide-y">
-                        <x-app.grid>
-                            @foreach($testimonials as $testimonial)
-                                <x-app.testimonial :testimonial="$testimonial"/>
-                            @endforeach
-                        </x-app.grid>
+                    <div x-data="masonry()">
+                        @foreach($testimonials as $testimonial)
+                            <x-app.testimonial :testimonial="$testimonial"/>
+                        @endforeach
+                    </div>
                 </div>
             </x-app.container>
         </x-app.section>

@@ -45,7 +45,7 @@
                     </div>
 
                     <div>
-                        <div class="prose text-gray-900 min-w-full">
+                        <div class="prose {{config('ideadigital.editor')}} text-gray-900 min-w-full">
                             {!!  $item->description !!}
                         </div>
                     </div>

@@ -4,22 +4,30 @@ namespace App\Http\Controllers\App;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\PostRepository;
+use App\Repositories\SeoPageRepository;
 use App\Repositories\WorkRepository;
+use CwsDigital\TwillMetadata\Traits\SetsMetadata;
 use Illuminate\Http\Request;
 
 class SeoPageController extends Controller
 {
-    private WorkRepository $post;
+    use setsMetadata;
 
-    public function __construct(WorkRepository $post)
+    private SeoPageRepository $seoPage;
+
+    public function __construct(SeoPageRepository $seoPage)
     {
-        $this->post = $post;
+        $this->seoPage = $seoPage;
     }
 
     public function __invoke()
     {
-       return view('site.pages.seo',[
-           'posts' => $this->post->latest()
-       ]);
+        $page = $this->seoPage->first();
+
+        $this->setMetadata($page);
+
+        return view('site.pages.seo', [
+            'page' => $page,
+        ]);
     }
 }

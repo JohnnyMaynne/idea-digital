@@ -12,7 +12,7 @@
                             <img
                                 data-src="{{ $image['src'] }}"
                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                class="w-full rounded h-auto m-0 z-20 block aspect-[180/90] bg-gray-100 transition"
+                                class="w-full object-cover rounded h-auto m-0 z-20 block aspect-[180/90] bg-gray-100 transition"
                                 alt="{{ $image['alt']  }}"
                                 title="{{ $image['alt']  }}"
                         >

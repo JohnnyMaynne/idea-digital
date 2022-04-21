@@ -1,6 +1,50 @@
 <?php
 
 return [
+
+    'pages' => [
+        'title' => 'Страницы',
+        'route' => 'admin.pages.homePage',
+        'primary_navigation' => [
+            'homePage' => [
+                'title' => 'Главная',
+                'singleton' => true,
+            ],
+            'seoPage' => [
+                'title' => 'SEO',
+                'singleton' => true,
+            ],
+            'worksPage' => [
+                'title' => 'Кейсы',
+                'singleton' => true,
+            ],
+            'aboutUsPage' => [
+                'title' => 'О нас',
+                'singleton' => true,
+            ],
+            'teamPage' => [
+                'title' => 'Команда',
+                'singleton' => true,
+            ],
+            'testimonialsPage' => [
+                'title' => 'Отзывы',
+                'singleton' => true,
+            ],
+            'jobsPage' => [
+                'title' => 'Работа',
+                'singleton' => true,
+            ],
+            'blogPage' => [
+                'title' => 'Блог',
+                'singleton' => true,
+            ],
+            'contactsPage' => [
+                'title' => 'Команда',
+                'singleton' => true,
+            ]
+        ]
+    ],
+
     'content' => [
         'title' => 'Контент',
         'route' => 'admin.content.posts.index',
@@ -116,7 +160,7 @@ return [
                 'title' => 'Seo settings',
                 'route' => 'admin.settings',
                 'params' => ['section' => 'seo']
-            ],
+            ]
         ]
     ],
 ];

@@ -98,8 +98,8 @@
                     </div>
                 </div>
             @endif
-            <div class="prose prose-a:relative prose-a:z-10 prose-a:transition hover:prose-a:decoration-blue-600 prose-a:underline-offset-4 prose-a:decoration-blue-100 prose-a:decoration-2 prose-a:text-blue-600 min-w-full mt-5">
-                <article x-data="hover()" @mouseover="hover($event)">
+            <div class="prose {{config('ideadigital.editor')}} min-w-full mt-5">
+                <article>
                     {!! $article_content !!}
                 </article>
             </div>
@@ -117,7 +117,7 @@
         </x-app.section>
 
 
-        @if(count($related))
+        @if(isset($related) && count($related))
             <div class="border-t pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
                 <div class="relative max-w-lg mx-auto lg:max-w-7xl">
                     <div>

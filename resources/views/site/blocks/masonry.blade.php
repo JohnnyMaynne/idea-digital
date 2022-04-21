@@ -7,7 +7,7 @@
                     data-fslightbox
                     href="{{ $image['src'] }}"
                 >
-                    <img class="block rounded shadow-2xl m-0 w-full h-auto bg-gray-100 transition"
+                    <img class="block object-cover rounded shadow-2xl m-0 w-full h-auto bg-gray-100 transition"
                          alt="{{ $image['alt']  }}"
                          title="{{ $image['alt']  }}"
                          src="{{ $image['src'] }}"

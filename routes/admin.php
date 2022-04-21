@@ -2,6 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::group(['prefix' => 'pages'], function () {
+    Route::singleton('homePage');
+    Route::singleton('homePage');
+    Route::singleton('seoPage');
+    Route::singleton('worksPage');
+    Route::singleton('aboutUsPage');
+    Route::singleton('teamPage');
+    Route::singleton('testimonialsPage');
+    Route::singleton('jobsPage');
+    Route::singleton('blogPage');
+    Route::singleton('contactsPage');
+});
+
+
+
+
 
 Route::group(['prefix' => 'content'], function () {
     Route::group(['prefix' => 'posts'], function () {

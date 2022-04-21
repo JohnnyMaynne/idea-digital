@@ -40,7 +40,7 @@ class Work extends Model implements Sortable, Viewable, Searchable
             'default' => [
                 [
                     'name' => 'default',
-                    'ratio' => 1,
+                    'ratio' => 'auto',
                 ],
             ],
         ],

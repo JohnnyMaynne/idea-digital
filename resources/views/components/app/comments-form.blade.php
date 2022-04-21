@@ -22,8 +22,8 @@
         </div>
 
         <div class="sm:col-span-6">
-            <div class="border pt-2 border-gray-300 rounded-lg overflow-hidden focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500">
-                <textarea x-data="textarea" @input="resize()" name="comment" x-model="form.comment" class="block w-full border-0 py-0 resize-none placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Write a comment..."></textarea>
+            <div class="border pt-4 border-gray-300 rounded-lg overflow-hidden focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500">
+                <textarea x-data="textarea" @input="resize()" x-ref="textarea" name="comment" x-model="form.comment" class="block w-full border-0 py-0 resize-none placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Write a comment..."></textarea>
 
                 <div aria-hidden="true">
                     <div class="py-2">

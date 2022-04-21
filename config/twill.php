@@ -1,17 +1,5 @@
 <?php
 
-//'projects' => [ // module name if you added a morph map entry for it, otherwise FQCN of the model (eg. App\Models\Project)
-//    'name' => 'projects', // module name
-//    'label' => 'projects', // optional, if the name of your module above does not work as a label
-//    'label_singular' => 'project', // optional, if the automated singular version of your name/label above does not work as a label
-//    'routePrefix' => 'work', // optional, if the module is living under a specific routes group
-//    'count' => true, // show total count with link to index of this module
-//    'create' => true, // show link in create new dropdown
-//    'activity' => true, // show activities on this module in actities list
-//    'draft' => true, // show drafts of this module for current user
-//    'search' => true, // show results for this module in global search
-//],
-
 return [
     'locale' => 'ru',
     'dashboard' => [

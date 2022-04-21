@@ -4,7 +4,7 @@
     $image = $testimonial->imageAsArray('cover','default',['w' => 150])
 @endphp
 
-<div class="p-5 border rounded-md">
+<div style="width: calc(50% - 40px)" class="p-5 border rounded-md grid-item mr-10 mb-10">
     <div class="flex items-center space-x-4">
         @if(count($image))
             <img class="h-12 w-12 rounded-full"

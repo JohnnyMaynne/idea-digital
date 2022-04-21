@@ -5,19 +5,25 @@ window.feedback = () =>  {
         loading: false,
         sended: false,
         form: {
-            name: null,
+            first_name: null,
+            last_name: null,
             email: null,
             phone: null,
             company: null,
             message: null,
+            budget: null,
+            source: null,
         },
 
         resetForm() {
-            this.form.name
+            this.form.first_name
+            = this.form.last_name
             = this.form.email
             = this.form.phone
             = this.form.company
             = this.form.message
+            = this.form.budget
+            = this.form.source
             = null
         },
 
