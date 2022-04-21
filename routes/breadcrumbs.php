@@ -5,6 +5,7 @@ use App\Models\Author;
 use App\Models\PostCategory;
 use App\Models\Vacancy;
 use App\Models\Work;
+use App\Repositories\PageRepository;
 use Tabuna\Breadcrumbs\Trail;
 
 
@@ -12,6 +13,16 @@ use Tabuna\Breadcrumbs\Trail;
 Breadcrumbs::for('home', fn (Trail $trail) =>
     $trail->push('Home', route('home'))
 );
+
+/// page
+Breadcrumbs::for('page.show', function (Trail $trail, string $slug) {
+    $current = app(PageRepository::class)->forNestedSlug($slug);
+
+    $trail
+        ->parent('home')
+        ->push($current->title, route('page.show', ['slug' => $current->slug]));
+});
+
 
 // seo
 Breadcrumbs::for('seo', fn (Trail $trail) =>

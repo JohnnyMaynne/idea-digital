@@ -15,10 +15,6 @@ Route::group(['prefix' => 'pages'], function () {
     Route::singleton('contactsPage');
 });
 
-
-
-
-
 Route::group(['prefix' => 'content'], function () {
     Route::group(['prefix' => 'posts'], function () {
         Route::module('posts');
@@ -27,6 +23,7 @@ Route::group(['prefix' => 'content'], function () {
 
     Route::module('posts');
     Route::module('works');
+    Route::module('pages');
     Route::module('authors');
     Route::module('comments');
     Route::module('questions');;

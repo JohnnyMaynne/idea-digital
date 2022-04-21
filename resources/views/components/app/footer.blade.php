@@ -54,9 +54,15 @@
                 <div class="flex justify-end">
                     <div class="mt-8 md:mt-0 md:order-1">
                         <div class="text-sm flex items-center  text-gray-500 space-x-4">
-                            <a class="block" href="">Privacy Policy</a>
-                            <a class="block" href="">Cookie policy</a>
-                            <a class="block" href="">Terms & conditions</a>
+                            @if($settings['privacy_policy'])
+                                <a class="block" href="{{ route('page.show',['slug' => $settings['privacy_policy']->slug]) }}">{{ $settings['privacy_policy']->title }}</a>
+                            @endif
+                            @if($settings['cookie_policy'])
+                                <a class="block" href="{{ route('page.show',['slug' => $settings['cookie_policy']->slug]) }}">{{ $settings['cookie_policy']->title }}</a>
+                            @endif
+                            @if($settings['terms_conditions'])
+                                <a class="block" href="{{ route('page.show',['slug' => $settings['terms_conditions']->slug]) }}">{{ $settings['terms_conditions']->title }}</a>
+                            @endif
                         </div>
                     </div>
                 </div>

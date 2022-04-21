@@ -3,7 +3,7 @@
 return [
 
     'pages' => [
-        'title' => 'Страницы',
+        'title' => 'Разделы',
         'route' => 'admin.pages.homePage',
         'primary_navigation' => [
             'homePage' => [
@@ -66,6 +66,11 @@ return [
 
             'works' => [
                 'title' => 'Кейсы',
+                'module' => true,
+            ],
+
+            'pages' => [
+                'title' => 'Страницы',
                 'module' => true,
             ],
 
@@ -141,6 +146,19 @@ return [
             'subscribers' => [
                 'title' => 'Подписчики',
                 'module' => true,
+            ],
+        ]
+    ],
+
+    'settings' => [
+        'title' => 'Settings',
+        'route' => 'admin.settings',
+        'params' => ['section' => 'links'],
+        'primary_navigation' => [
+            'links' => [
+                'title' => 'Section name',
+                'route' => 'admin.settings',
+                'params' => ['section' => 'links']
             ],
         ]
     ],

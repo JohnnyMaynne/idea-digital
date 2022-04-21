@@ -175,6 +175,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         \App\Providers\BreadcrumbsServiceProvider::class,
+        \App\Providers\ViewServiceProvider::class,
+
     ],
 
     /*

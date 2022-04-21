@@ -9,6 +9,7 @@ use App\Http\Controllers\App\CommentsController;
 use App\Http\Controllers\App\ContactsPageController;
 use App\Http\Controllers\App\FeedbackController;
 use App\Http\Controllers\App\HomeController;
+use App\Http\Controllers\App\PagesController;
 use App\Http\Controllers\App\PostCategoriesController;
 use App\Http\Controllers\App\PostsController;
 use App\Http\Controllers\App\RatingsController;
@@ -32,6 +33,9 @@ use Illuminate\Support\Facades\Route;
 
 // home page
 Route::get('/', HomeController::class)->name('home');
+
+// dynamic page
+Route::get('/{slug}', PagesController::class)->name('page.show');
 
 // seo page
 Route::get('seo', SeoPageController::class)->name('seo');
