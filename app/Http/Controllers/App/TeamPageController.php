@@ -4,10 +4,14 @@ namespace App\Http\Controllers\App;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\EmployeeRepository;
+use CwsDigital\TwillMetadata\Traits\SetsMetadata;
 use Illuminate\Http\Request;
 
 class TeamPageController extends Controller
 {
+
+
+    use setsMetadata;
 
     private EmployeeRepository $employee;
 

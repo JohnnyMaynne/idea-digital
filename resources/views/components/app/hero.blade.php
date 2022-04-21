@@ -1,8 +1,10 @@
+@props(['page'])
+
 <div {{ $attributes->class('min-h-hero relative') }}>
     <div class="pt-40 relative z-30">
         <x-app.container>
             <div class="text-7xl max-w-3xl font-bold text-white">
-                Get more leads, more customers, and more sales with Idea Digital Agency
+                {{ $page->title }}
             </div>
             <x-app.read-more :href="route('about-us')" invert class="mt-10">Read more</x-app.read-more>
         </x-app.container>

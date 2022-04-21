@@ -70,24 +70,18 @@ return [
             ],
 
             'authors' => [
-                'title' => 'Материалы',
+                'title' => 'Авторы',
                 'module' => true,
-                'secondary_navigation' => [
-                    'authors' => [
-                        'title' => 'Авторы',
-                        'module' => true,
-                    ],
+            ],
 
-                    'comments' => [
-                        'title' => 'Коментарии',
-                        'module' => true,
-                    ],
+            'comments' => [
+                'title' => 'Коментарии',
+                'module' => true,
+            ],
 
-                    'questions' => [
-                        'title' => 'Вопросы',
-                        'module' => true,
-                    ],
-                ]
+            'questions' => [
+                'title' => 'Вопросы',
+                'module' => true,
             ],
         ]
     ],
@@ -148,19 +142,6 @@ return [
                 'title' => 'Подписчики',
                 'module' => true,
             ],
-        ]
-    ],
-
-    'settings' => [
-        'title' => 'Settings',
-        'route' => 'admin.settings',
-        'params' => ['section' => 'seo'],
-        'primary_navigation' => [
-            'seo' => [
-                'title' => 'Seo settings',
-                'route' => 'admin.settings',
-                'params' => ['section' => 'seo']
-            ]
         ]
     ],
 ];

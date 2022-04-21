@@ -10,7 +10,6 @@
         </x-app.grid>
         <div class="mt-16">
                 <div class="grid grid-cols-6">
-                @for ($i = 0; $i < 3; $i++)
                     @foreach($clients as $client)
                         @php
                             $image = $client->imageAsArray('cover','default')
@@ -23,7 +22,7 @@
                                 alt="{{ $image['src'] }}">
                         </div>
                     @endforeach
-            @endfor
+                </div>
         </div>
     </x-app.container>
 </x-app.section>

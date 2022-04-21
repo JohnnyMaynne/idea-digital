@@ -21,7 +21,6 @@ class JobsPageSeeder extends Seeder
 
         app(JobsPageRepository::class)->create([
             'title' => 'Job in Idea Digital Agency',
-            'published' => true,
         ]);
     }
 }

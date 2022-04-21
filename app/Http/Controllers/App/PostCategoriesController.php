@@ -5,9 +5,13 @@ namespace App\Http\Controllers\App;
 use App\Http\Controllers\Controller;
 use App\Repositories\PostCategoryRepository;
 use App\Repositories\PostRepository;
+use CwsDigital\TwillMetadata\Traits\SetsMetadata;
 
 class PostCategoriesController extends Controller
 {
+
+
+    use setsMetadata;
 
     private PostCategoryRepository $category;
     private PostRepository $post;

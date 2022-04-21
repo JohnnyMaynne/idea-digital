@@ -21,7 +21,6 @@ class TeamPageSeeder extends Seeder
 
         app(TeamPageRepository::class)->create([
             'title' => 'Team Idea Digital Agency',
-            'published' => true,
         ]);
     }
 }

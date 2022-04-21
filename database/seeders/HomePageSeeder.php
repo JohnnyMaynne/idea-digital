@@ -21,7 +21,6 @@ class HomePageSeeder extends Seeder
 
         app(HomePageRepository::class)->create([
             'title' => 'Get more leads, more customers, and more sales with Idea Digital Agency',
-            'published' => true,
         ]);
     }
 }

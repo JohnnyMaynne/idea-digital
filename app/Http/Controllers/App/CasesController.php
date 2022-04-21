@@ -14,12 +14,10 @@ class CasesController extends Controller
     private WorkRepository $work;
 
 
-
     public function __construct(WorkRepository $work)
     {
         $this->work = $work;
     }
-
 
 
     public function index()
@@ -28,7 +26,6 @@ class CasesController extends Controller
             'posts' => $this->work->get()
         ]);
     }
-
 
 
     public function show($slug)

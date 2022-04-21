@@ -9,7 +9,7 @@ class CreateTestimonialsPagesTables extends Migration
     public function up()
     {
         Schema::create('testimonials_pages', function (Blueprint $table) {
-            createDefaultTableFields($table);
+            $table->bigIncrements('id');
             $table->string('title', 200)->nullable();
         });
     }

@@ -3,7 +3,8 @@
 
 @section('content')
     <x-app.page invert>
-        <x-app.hero/>
+        <x-app.hero :page="$page"/>
+
         <x-app.section>
             <x-app.container>
                 <x-app.grid>
@@ -15,16 +16,17 @@
                 </x-app.grid>
 
                 <x-app.grid class="mt-16">
-                    @foreach($works as $post)
+                    @foreach($page->getRelated('works') as $post)
                         <x-blog.article-card :post="$post"/>
                     @endforeach
                 </x-app.grid>
             </x-app.container>
         </x-app.section>
-        <x-clients.logos :clients="$clients"/>
-        <x-blog.grid :posts="$posts"/>
-        <x-testimonials.grid :testimonials="$testimonials"/>
-        <x-questions.section :questions="$questions"/>
+
+        <x-clients.logos :clients="$page->getRelated('clients')"/>
+        <x-blog.grid :posts="$page->getRelated('posts')"/>
+        <x-testimonials.grid :testimonials="$page->getRelated('testimonials')"/>
+        <x-questions.section :questions="$page->getRelated('questions')"/>
         <x-feedback.form/>
     </x-app.page>
 @endsection

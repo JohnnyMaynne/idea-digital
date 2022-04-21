@@ -12,9 +12,10 @@ class JobsPage extends Model
     use HasMedias, HasMetadata;
 
     protected $fillable = [
-        'published',
         'title',
     ];
+
+    public $timestamps = false;
 
     public $metadataFallbacks = [];
 

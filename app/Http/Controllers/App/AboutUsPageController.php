@@ -5,10 +5,14 @@ namespace App\Http\Controllers\App;
 use App\Http\Controllers\Controller;
 use App\Repositories\ClientRepository;
 use App\Repositories\TestimonialRepository;
+use CwsDigital\TwillMetadata\Traits\SetsMetadata;
 use Illuminate\Http\Request;
 
 class AboutUsPageController extends Controller
 {
+
+    use setsMetadata;
+
     private TestimonialRepository $testimonial;
     private ClientRepository $client;
 

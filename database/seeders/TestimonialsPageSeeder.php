@@ -21,7 +21,6 @@ class TestimonialsPageSeeder extends Seeder
 
         app(TestimonialsPageRepository::class)->create([
             'title' => 'Testimonials about Idea Digital Agency',
-            'published' => true,
         ]);
     }
 }

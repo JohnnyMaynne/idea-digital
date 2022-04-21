@@ -15,12 +15,10 @@ class VacanciesController extends Controller
     private VacancyRepository $vacancy;
 
 
-
     public function __construct(VacancyRepository $vacancy)
     {
         $this->vacancy = $vacancy;
     }
-
 
 
     public function index()
@@ -29,7 +27,6 @@ class VacanciesController extends Controller
             'vacancies' => $this->vacancy->get()
         ]);
     }
-
 
 
     public function show($slug)

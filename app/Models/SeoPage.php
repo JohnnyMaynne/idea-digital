@@ -14,7 +14,6 @@ class SeoPage extends Model
     use HasBlocks, HasRelated, HasMedias, HasMetadata;
 
     protected $fillable = [
-        'published',
         'title',
         'description',
         'steps'
@@ -23,6 +22,8 @@ class SeoPage extends Model
     protected $casts = [
         'steps' => 'array',
     ];
+
+    public $timestamps = false;
 
     public $metadataFallbacks = [];
 

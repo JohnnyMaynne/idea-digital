@@ -11,6 +11,8 @@ class HomePageRepository extends ModuleRepository
 {
     use HandleMetadata;
 
+    protected $relatedBrowsers = ['works','posts','testimonials','questions','clients'];
+
     public function __construct(HomePage $model)
     {
         $this->model = $model;

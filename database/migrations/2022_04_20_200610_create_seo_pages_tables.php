@@ -9,7 +9,7 @@ class CreateSeoPagesTables extends Migration
     public function up()
     {
         Schema::create('seo_pages', function (Blueprint $table) {
-            createDefaultTableFields($table);
+            $table->bigIncrements('id');
             $table->string('title', 200)->nullable();
             $table->text('description', 1000)->nullable();
             $table->json('steps')->nullable();

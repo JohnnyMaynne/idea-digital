@@ -21,7 +21,6 @@ class ContactsPageSeeder extends Seeder
 
         app(ContactsPageRepository::class)->create([
             'title' => 'Contact Idea Digital Agency',
-            'published' => true,
         ]);
     }
 }

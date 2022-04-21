@@ -9,7 +9,7 @@ class CreateHomePagesTables extends Migration
     public function up()
     {
         Schema::create('home_pages', function (Blueprint $table) {
-            createDefaultTableFields($table);
+            $table->bigIncrements('id');
             $table->string('title', 200)->nullable();
         });
     }

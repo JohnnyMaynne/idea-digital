@@ -21,7 +21,6 @@ class SeoPageSeeder extends Seeder
 
         app(SeoPageRepository::class)->create([
             'title' => 'Search Engine Optimization Services',
-            'published' => true,
         ]);
     }
 }

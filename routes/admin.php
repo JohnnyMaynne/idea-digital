@@ -25,15 +25,11 @@ Route::group(['prefix' => 'content'], function () {
         Route::module('postCategories');
     });
 
-    Route::group(['prefix' => 'authors'], function () {
-        Route::module('authors');
-        Route::module('comments');
-        Route::module('questions');;
-    });
-
     Route::module('posts');
     Route::module('works');
     Route::module('authors');
+    Route::module('comments');
+    Route::module('questions');;
 });
 
 Route::group(['prefix' => 'team'], function () {

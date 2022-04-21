@@ -21,7 +21,6 @@ class WorksPageSeeder extends Seeder
 
         app(WorksPageRepository::class)->create([
             'title' => 'Cases',
-            'published' => true,
         ]);
     }
 }

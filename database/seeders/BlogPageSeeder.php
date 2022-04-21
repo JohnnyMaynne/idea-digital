@@ -21,7 +21,6 @@ class BlogPageSeeder extends Seeder
 
         app(BlogPageRepository::class)->create([
             'title' => 'Blog',
-            'published' => true,
         ]);
     }
 }

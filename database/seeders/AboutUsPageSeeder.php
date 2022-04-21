@@ -21,7 +21,6 @@ class AboutUsPageSeeder extends Seeder
 
         app(AboutUsPageRepository::class)->create([
             'title' => 'About Idea Digital Agency',
-            'published' => true,
         ]);
     }
 }

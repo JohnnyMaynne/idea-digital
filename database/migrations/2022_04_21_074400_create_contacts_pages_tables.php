@@ -9,7 +9,7 @@ class CreateContactsPagesTables extends Migration
     public function up()
     {
         Schema::create('contacts_pages', function (Blueprint $table) {
-            createDefaultTableFields($table);
+            $table->bigIncrements('id');
             $table->string('title', 200)->nullable();
         });
     }
