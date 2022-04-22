@@ -2,17 +2,20 @@
 
 namespace App\Http\Cache\Replacers;
 
+use App\Helpers\viewComponent;
 use App\Http\Controllers\App\ViewsController;
 use App\Models\Post;
 use App\Models\Work;
 use App\Repositories\PostRepository;
 use App\Repositories\WorkRepository;
+use Blade;
+use Illuminate\View\Component;
 use Spatie\ResponseCache\Replacers\Replacer;
 use Symfony\Component\HttpFoundation\Response;
 
-class ViewsReplacer implements Replacer
+class RatingReplacer implements Replacer
 {
-    private array $routes = ['blog.single','cases.single'];
+    private array $routes = ['blog.single'];
 
     public function prepareResponseToCache(Response $response): void
     {
@@ -29,11 +32,10 @@ class ViewsReplacer implements Replacer
             return;
         }
 
-
         $response->setContent(preg_replace(
-            '/<span id=\"views_count\">.*?<\/span>/',
-           $this->getCountViews(),
-           $response->getContent())
+            '#<div id=\"rating\">(.+?)</div>#s',
+            $this->getRating(),
+            $response->getContent())
         );
     }
 
@@ -44,17 +46,17 @@ class ViewsReplacer implements Replacer
         return in_array($route,$this->routes);
     }
 
-    private function getCountViews(): int
+    private function getRating(): string
     {
-        $model = match (request()->route()->getName()) {
-            'blog.single' => PostRepository::class,
-             default => WorkRepository::class,
-        };
 
-        $record = app($model)->forSlug(request()->route('slug'));
+        $record = app(PostRepository::class)
+            ->forSlug(request()
+            ->route('slug'));
 
-        views($record)->record();
 
-        return views($record)->count();
+        return viewComponent::render('app.rating', [
+            'model' => $record,
+        ]);
+
     }
 }

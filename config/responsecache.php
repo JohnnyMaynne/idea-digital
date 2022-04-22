@@ -47,7 +47,8 @@ return [
      */
     'replacers' => [
         \Spatie\ResponseCache\Replacers\CsrfTokenReplacer::class,
-        \App\Http\Cache\Replacers\ViewsReplacer::class
+        \App\Http\Cache\Replacers\ViewsReplacer::class,
+        \App\Http\Cache\Replacers\RatingReplacer::class
     ],
 
     /*

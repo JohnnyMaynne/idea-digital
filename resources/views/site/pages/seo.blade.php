@@ -82,7 +82,7 @@
                                     <a href="#" @click.prevent="select(index)" class="relative flex items-start group">
                                         <span class="h-9 flex items-center" aria-hidden="true">
                                               <span :class="[index <= current ? 'border-blue-600' : ' group-hover:border-gray-400']" class="relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full">
-                                                <span :class="[index <= current ? 'bg-blue-600' : ' group-hover:bg-gray-300']"  class="h-2.5 w-2.5 bg-transparent rounded-full"></span>
+                                                <span :class="[index <= current ? 'bg-blue-600' : 'bg-gray-400 group-hover:bg-gray-300']"  class="h-2.5 w-2.5  rounded-full"></span>
                                               </span>
                                         </span>
 

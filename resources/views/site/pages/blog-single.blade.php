@@ -59,7 +59,7 @@
                                 <circle cx="12" cy="12" r="2"></circle>
                                 <path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7"></path>
                             </svg>
-                            <span><span id="views_count"></span> views</span>
+                            <span><span id="views_count">{{ views($item)->count() }}</span> views</span>
                         </div>
                         <a href="#comments" class="font-medium flex items-center space-x-2 text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -106,7 +106,9 @@
 
             <div class="mx-auto w-full mt-8 mb-16 px-4 max-w-4xl">
                 <x-app.shared :title="$item->title" :url="route('blog.single',['slug' => $item->slug])">
-                    <x-app.rating :model="$item"/>
+                    <div id="rating">
+                        <x-app.rating :model="$item"/>
+                    </div>
                 </x-app.shared>
             </div>
 
