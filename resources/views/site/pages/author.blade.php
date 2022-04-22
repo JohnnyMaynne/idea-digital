@@ -19,9 +19,11 @@
                         @endif
                         <div>
                             <div class="text-7xl font-bold"> {{ $author->title }}</div>
-                            <div class="mt-4 text-gray-500">
-                                {!! $author->description !!}
-                            </div>
+                            @if($author->description)
+                                <div class="mt-4 text-gray-500">
+                                    {!! $author->description !!}
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </x-app.container>
