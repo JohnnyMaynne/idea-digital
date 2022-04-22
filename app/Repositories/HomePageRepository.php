@@ -11,7 +11,31 @@ class HomePageRepository extends ModuleRepository
 {
     use HandleMetadata;
 
-    protected $relatedBrowsers = ['works','posts','testimonials','questions','clients'];
+    protected $fieldsGroups = [
+        'content' => [
+            'cases_title',
+            'cases_description',
+            'clients_title',
+            'clients_description',
+            'posts_title',
+            'posts_description',
+            'testimonials_title',
+            'testimonials_description',
+            'questions_title',
+            'questions_description',
+            'contacts_title',
+            'contacts_description',
+
+        ],
+    ];
+
+    protected $relatedBrowsers = [
+        'works',
+        'posts',
+        'testimonials',
+        'questions',
+        'clients'
+    ];
 
     public function __construct(HomePage $model)
     {

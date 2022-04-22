@@ -11,6 +11,13 @@ class TeamPageRepository extends ModuleRepository
 {
     use HandleMetadata;
 
+    protected $fieldsGroups = [
+        'content' => [
+            'section_title',
+            'section_description',
+        ],
+    ];
+
     public function __construct(TeamPage $model)
     {
         $this->model = $model;

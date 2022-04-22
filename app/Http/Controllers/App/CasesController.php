@@ -42,6 +42,8 @@ class CasesController extends Controller
 
         $this->setMetadata($work);
 
+        views($work)->record();
+
         return view('site.pages.cases-single',[
             'item' => $work
         ]);

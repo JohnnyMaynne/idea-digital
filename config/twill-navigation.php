@@ -39,7 +39,7 @@ return [
                 'singleton' => true,
             ],
             'contactsPage' => [
-                'title' => 'Команда',
+                'title' => 'Контакты',
                 'singleton' => true,
             ]
         ]

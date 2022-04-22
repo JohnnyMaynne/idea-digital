@@ -14,4 +14,22 @@ class QuestionController extends BaseModuleController
         'permalink' => false,
         'reorder' => true,
     ];
+
+    protected $indexColumns = [
+        'question' => [
+            'title' => 'Вопрос',
+            'field' => 'question',
+        ],
+        'answer' => [
+            'title' => 'Ответ',
+            'field' => 'answer',
+        ],
+    ];
+
+    protected $browserColumns = [
+        'title' => [
+            'title' => 'Вопрос',
+            'field' => 'question',
+        ],
+    ];
 }

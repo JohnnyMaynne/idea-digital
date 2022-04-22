@@ -20,7 +20,7 @@
                         <div>
                             <div class="text-7xl font-bold"> {{ $author->title }}</div>
                             <div class="mt-4 text-gray-500">
-                                At this difficult time for Ukraine, we decided to share our volunteering stories with you. We hope it would strengthen your faith in the indestructibility and benevolence of our people.The&nbsp;Idea...
+                                {!! $author->description !!}
                             </div>
                         </div>
                     </div>

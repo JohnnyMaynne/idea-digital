@@ -12,6 +12,30 @@ class AuthorController extends BaseModuleController
         'reorder' => true
     ];
 
+    protected $indexColumns = [
+        'image' => [
+            'thumb' => true,
+            'variant' => [
+                'role' => 'cover',
+                'crop' => 'default',
+            ],
+        ],
+        'title' => [
+            'title' => 'Имя автора',
+            'field' => 'title',
+        ],
+        'postsCount' => [
+            'title' => 'Статей',
+            'field' => 'postsCount',
+            'present' => true,
+        ],
+        'worksCount' => [
+            'title' => 'Кейсов',
+            'field' => 'worksCount',
+            'present' => true,
+        ],
+    ];
+
     protected function formData($request)
     {
         return [

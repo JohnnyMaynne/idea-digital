@@ -37,6 +37,41 @@
             'max' =>  1000,
             'toolbarOptions' => ['bold','italic','underline','strike','link']
         ])
+
+        @formColumns
+            @slot('left')
+                @formField('input', [
+                    'name' => 'alex_name',
+                    'label' => 'Саша',
+                    'maxlength' => 100
+                ])
+                @formField('input', [
+                    'name' => 'alex_position',
+                    'label' => 'Сноска',
+                    'maxlength' => 100
+                ])
+                @formField('medias', [
+                    'name' => 'alex',
+                    'label' => 'Фото'
+                ])
+            @endslot
+            @slot('right')
+                @formField('input', [
+                    'name' => 'julia_name',
+                    'label' => 'Юля',
+                    'maxlength' => 100
+                ])
+                @formField('input', [
+                    'name' => 'julia_position',
+                    'label' => 'Сноска',
+                    'maxlength' => 100
+                ])
+                @formField('medias', [
+                    'name' => 'julia',
+                    'label' => 'Фото'
+                ])
+            @endslot
+        @endformColumns
     @endformFieldset
 
     @formFieldset(['id' => 'testimonials', 'title' => 'Отзывы', 'open' => false])
@@ -51,6 +86,13 @@
             'max' =>  1000,
             'toolbarOptions' => ['bold','italic','underline','strike','link']
         ])
+
+        @formField('browser', [
+            'endpoint' => '/clients/testimonials/browser',
+            'name' => 'testimonials',
+            'label' => 'Отзывы',
+            'max' => 100,
+        ])
     @endformFieldset
 
     @formFieldset(['id' => 'clients', 'title' => 'Клиенты', 'open' => false])
@@ -64,6 +106,12 @@
             'label' => 'Краткое описание',
             'max' =>  1000,
             'toolbarOptions' => ['bold','italic','underline','strike','link']
+        ])
+        @formField('browser', [
+            'endpoint' => '/clients/clients/browser',
+            'name' => 'clients',
+            'label' => 'Клиенты',
+            'max' => 100,
         ])
     @endformFieldset
 

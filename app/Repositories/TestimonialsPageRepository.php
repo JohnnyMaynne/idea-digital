@@ -11,6 +11,14 @@ class TestimonialsPageRepository extends ModuleRepository
 {
     use HandleMetadata;
 
+
+    protected $fieldsGroups = [
+        'content' => [
+            'section_title',
+            'section_description',
+        ],
+    ];
+
     public function __construct(TestimonialsPage $model)
     {
         $this->model = $model;

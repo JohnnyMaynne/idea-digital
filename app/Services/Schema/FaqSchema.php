@@ -9,7 +9,7 @@ class FaqSchema extends SchemaBase
 
     public function render(): string
     {
-        $questions = [];
+        $questions = $this->model->getRelated('questions');
 
 
         if (!count($questions)) {
@@ -21,10 +21,10 @@ class FaqSchema extends SchemaBase
 
         foreach ($questions as $item) {
             $items[] = Schema::question()
-                ->name($item['question'])
+                ->name($item->question)
                 ->acceptedAnswer(
                     Schema::answer()
-                        ->text($item['answer'])
+                        ->text(strip_tags($item->answer))
                 );
             $count++;
         }

@@ -7,6 +7,7 @@ use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
+use App\Models\Presenters\AuthorPresenter;
 use App\Traits\ClearsResponseCache;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
@@ -22,6 +23,7 @@ class Author extends Model implements Sortable, Searchable
     protected $fillable = [
         'published',
         'title',
+        'description',
         'position',
     ];
 
@@ -34,11 +36,13 @@ class Author extends Model implements Sortable, Searchable
             'default' => [
                 [
                     'name' => 'default',
-                    'ratio' => 1,
+                    'ratio' => 'auto',
                 ],
             ],
         ],
     ];
+
+    public string $presenterAdmin = AuthorPresenter::class;
 
     public function getSearchResult(): SearchResult
     {

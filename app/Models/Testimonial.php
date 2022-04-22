@@ -35,6 +35,12 @@ class Testimonial extends Model implements Sortable
     ];
 
 
+    public function getTitleInBrowserAttribute()
+    {
+        return $this->name;
+    }
+
+
     public function work(): BelongsTo
     {
         return $this->belongsTo(Work::class);

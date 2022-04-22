@@ -17,6 +17,26 @@ class PostController extends BaseModuleController
     protected $indexOptions = [
     ];
 
+
+    protected $indexColumns = [
+        'title' => [
+            'title' => 'Название статьи',
+            'field' => 'title',
+        ],
+        'author' => [
+            'title' => 'Автор',
+            'sort' => true,
+            'relationship' => 'author',
+            'field' => 'title'
+        ],
+        'category' => [
+            'title' => 'Категория',
+            'sort' => true,
+            'relationship' => 'category',
+            'field' => 'title'
+        ],
+    ];
+
     protected function formData($request)
     {
         return [

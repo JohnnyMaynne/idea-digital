@@ -14,6 +14,19 @@ class WorkController extends BaseModuleController
     protected $indexOptions = [
     ];
 
+    protected $indexColumns = [
+        'title' => [
+            'title' => 'Название кейса',
+            'field' => 'title',
+        ],
+        'author' => [
+            'title' => 'Автор',
+            'sort' => true,
+            'relationship' => 'author',
+            'field' => 'title'
+        ],
+    ];
+
     protected function formData($request)
     {
         return [

@@ -12,4 +12,19 @@ class EmployeeController extends BaseModuleController
         'permalink' => false,
         'reorder' => true,
     ];
+
+
+    protected $indexColumns = [
+        'image' => [
+            'thumb' => true,
+            'variant' => [
+                'role' => 'cover',
+                'crop' => 'default',
+            ],
+        ],
+        'title' => [
+            'title' => 'Имя',
+            'field' => 'title',
+        ],
+    ];
 }

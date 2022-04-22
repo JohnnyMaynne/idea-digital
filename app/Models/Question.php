@@ -19,4 +19,9 @@ class Question extends Model implements Sortable
         'position',
     ];
 
+    public function getTitleInBrowserAttribute()
+    {
+        return $this->question;
+    }
+
 }

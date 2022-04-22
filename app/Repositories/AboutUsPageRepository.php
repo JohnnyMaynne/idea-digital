@@ -3,13 +3,14 @@
 namespace App\Repositories;
 
 
+use A17\Twill\Repositories\Behaviors\HandleMedias;
 use A17\Twill\Repositories\ModuleRepository;
 use App\Models\AboutUsPage;
 use CwsDigital\TwillMetadata\Repositories\Behaviours\HandleMetadata;
 
 class AboutUsPageRepository extends ModuleRepository
 {
-    use HandleMetadata;
+    use HandleMetadata, HandleMedias;
 
     protected $fieldsGroups = [
         'content' => [
@@ -21,7 +22,18 @@ class AboutUsPageRepository extends ModuleRepository
             'testimonials_description',
             'clients_title',
             'clients_description',
+            'alex_name',
+            'alex_position',
+            'alex',
+            'julia_name',
+            'julia_position',
+            'julia',
         ],
+    ];
+
+    protected $relatedBrowsers = [
+        'testimonials',
+        'clients'
     ];
 
     public function __construct(AboutUsPage $model)

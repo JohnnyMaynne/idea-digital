@@ -11,6 +11,8 @@ class QuestionRepository extends ModuleRepository
 {
     use HandleMethods;
 
+   protected $title = 'question';
+
     public function __construct(Question $model)
     {
         $this->model = $model;

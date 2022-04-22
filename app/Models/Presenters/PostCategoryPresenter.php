@@ -2,10 +2,10 @@
 
 namespace App\Models\Presenters;
 
-class ArticleCategoryPresenter extends Presenter
+class PostCategoryPresenter extends Presenter
 {
     public function getArticlesCount(): int
     {
-        return count($this->articles);
+        return count($this->posts);
     }
 }

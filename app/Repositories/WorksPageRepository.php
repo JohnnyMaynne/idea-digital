@@ -11,6 +11,7 @@ class WorksPageRepository extends ModuleRepository
 {
     use HandleMetadata;
 
+
     public function __construct(WorksPage $model)
     {
         $this->model = $model;

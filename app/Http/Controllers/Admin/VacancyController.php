@@ -14,6 +14,25 @@ class VacancyController extends BaseModuleController
         'reorder' => true
     ];
 
+    protected $indexColumns = [
+        'title' => [
+            'title' => 'Заголовок',
+            'field' => 'title',
+        ],
+        'title' => [
+            'title' => 'Title',
+            'field' => 'title',
+        ],
+        'title' => [
+            'title' => 'Title',
+            'field' => 'title',
+        ],
+        'title' => [
+            'title' => 'Title',
+            'field' => 'title',
+        ],
+    ];
+
     protected function formData($request)
     {
         return [

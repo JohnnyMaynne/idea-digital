@@ -9,6 +9,12 @@
         'name' => 'cover',
         'label' => 'Фото',
     ])
+    @formField('wysiwyg', [
+        'name' => 'description',
+        'label' => 'Информация',
+        'max' =>  1000,
+        'toolbarOptions' => ['bold','italic','underline','strike','link']
+    ])
 @endsection
 
 @section('fieldsets')
