@@ -7,11 +7,12 @@ use A17\Twill\Models\Behaviors\HasNesting;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
 use App\Models\Presenters\CommentPresenter;
+use App\Traits\ClearsResponseCache;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Comment extends Model implements Sortable
 {
-    use HasPosition, HasNesting;
+    use HasPosition, HasNesting, ClearsResponseCache;
 
     protected $fillable = [
         'published',

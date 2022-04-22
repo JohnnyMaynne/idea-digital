@@ -30,7 +30,8 @@ class TeamPageController extends Controller
         $this->setMetadata($page);
 
         return view('site.pages.team',[
-            'employees' => $this->employee->get()
+            'employees' => $this->employee->get(),
+            'page' => $page
         ]);
     }
 }

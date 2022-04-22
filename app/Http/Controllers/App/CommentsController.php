@@ -8,7 +8,7 @@ use App\Models\Post;
 
 class CommentsController extends Controller
 {
-    public function __invoke()
+    public function store()
     {
 
         $model = Post::findOrFail(request('model'));
@@ -23,5 +23,10 @@ class CommentsController extends Controller
         $comment->save();
 
         return $comment;
+    }
+
+    public function show($id)
+    {
+
     }
 }

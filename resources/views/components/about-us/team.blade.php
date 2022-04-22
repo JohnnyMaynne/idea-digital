@@ -1,9 +1,15 @@
+@props(['page'])
+
 <x-app.section class="border-b py-20">
     <x-app.container>
         <x-app.grid>
             <div>
-                <x-app.title>Team</x-app.title>
-                <div class="text-gray-500 mt-3">Our expert team of experienced SEO specialists, project managers, content managers, techies, authors can help you get more out of digital. We pride ourselves on delivering the best results in SERP that are based on proven techniques.</div>
+                <x-app.title>
+                    {{ $page->getField('team_title') }}
+                </x-app.title>
+                <div class="text-gray-500 mt-3">
+                    {!! $page->getField('team_description') !!}
+                </div>
                 <x-app.read-more :href="route('team')" class="mt-3">More info</x-app.read-more>
             </div>
             <div>

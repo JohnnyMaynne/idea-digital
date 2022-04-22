@@ -14,7 +14,7 @@
         'name' => 'description',
         'label' => 'Краткое описание',
         'max' =>  1000,
-        'toolbarOptions' => ['bold','italic','underline','strike','link']
+        'toolbarOptions' => [ ['list' => 'ordered'],['list' => 'bullet'],'bold','italic','underline','strike','link']
     ])
 
     @formField('select', [

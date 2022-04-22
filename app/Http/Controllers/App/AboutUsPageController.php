@@ -39,6 +39,7 @@ class AboutUsPageController extends Controller
         return view('site.pages.about-us',[
             'testimonials' => $this->testimonial->latest(),
             'clients' => $this->client->get(),
+            'page' => $page
         ]);
     }
 }

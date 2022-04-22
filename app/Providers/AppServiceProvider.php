@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
-use A17\Twill\Repositories\SettingRepository;
-use App\Repositories\PageRepository;
+use App\Services\Schema\BreadcrumbsSchema;
+use App\Services\Schema\SchemaRender;
+use App\Services\Schema\WebPageSchema;
 use Illuminate\Support\ServiceProvider;
-use View;
+use SchemaSeo;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,13 +27,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $settings =  app(SettingRepository::class);
-        $page = app(PageRepository::class);
+        $this->app->bind('schema', function () {
+            return new SchemaRender();
+        });
 
-        View::share('settings',[
-            'privacy_policy' => $page->find($settings->byKey('privacy_policy')),
-            'cookie_policy' => $page->find($settings->byKey('cookie_policy')),
-            'terms_conditions' => $page->find($settings->byKey('terms_conditions'))
-        ]);
+        SchemaSeo::addSchema($this->app->make(WebPageSchema::class));
+        if(request()->server->get('REQUEST_URI') !==  '/') {
+            SchemaSeo::addSchema($this->app->make(BreadcrumbsSchema::class));
+        }
     }
 }

@@ -7,6 +7,7 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
+use App\Traits\ClearsResponseCache;
 use App\Traits\HasAuthor;
 use App\Traits\HasComments;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
@@ -19,7 +20,7 @@ use Spatie\Searchable\SearchResult;
 
 class Post extends Model implements Viewable, Searchable
 {
-    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasMetadata, HasAuthor, HasComments, InteractsWithViews, Rateable;
+    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasMetadata, HasAuthor, HasComments, InteractsWithViews, Rateable, ClearsResponseCache;
 
     public $metadataFallbacks = [];
 

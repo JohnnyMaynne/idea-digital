@@ -32,7 +32,8 @@ class VacanciesController extends Controller
         $this->setMetadata($page);
 
         return view('site.pages.job',[
-            'vacancies' => $this->vacancy->get()
+            'vacancies' => $this->vacancy->get(),
+            'page' => $page
         ]);
     }
 

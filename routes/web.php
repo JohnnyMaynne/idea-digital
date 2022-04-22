@@ -18,6 +18,7 @@ use App\Http\Controllers\App\SeoPageController;
 use App\Http\Controllers\App\TeamPageController;
 use App\Http\Controllers\App\TestimonialsPageController;
 use App\Http\Controllers\App\VacanciesController;
+use App\Http\Controllers\App\ViewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,8 +35,6 @@ use Illuminate\Support\Facades\Route;
 // home page
 Route::get('/', HomeController::class)->name('home');
 
-// dynamic page
-Route::get('/{slug}', PagesController::class)->name('page.show');
 
 // seo page
 Route::get('seo', SeoPageController::class)->name('seo');
@@ -66,12 +65,13 @@ Route::get('jobs/{slug}', [VacanciesController::class,'show'])->name('job.show')
 Route::get('/authors/{slug}', AuthorsController::class)->name('author');
 
 // comments
-Route::post('comments', CommentsController::class)->name('comments.store');
+Route::post('comments', [CommentsController::class,'store'])->name('comments.store');
+Route::get('comments/{id}', [CommentsController::class,'show'])->name('comments.show');
 
 
 // rating
-Route::post('ratings/{post}', RatingsController::class)->name('ratings.store');
-
+Route::post('ratings/{post}', [RatingsController::class,'store'])->name('ratings.store');
+Route::get('ratings/{post}', [RatingsController::class,'show'])->middleware('doNotCacheResponse')->name('ratings.show');
 
 // search
 Route::post('search', SearchController::class)->name('search');
@@ -79,4 +79,8 @@ Route::post('search', SearchController::class)->name('search');
 
 // feedback
 Route::post('feedback', FeedbackController::class)->name('feedback');
+
+
+// dynamic page
+Route::get('/{slug}', PagesController::class)->name('page.show');
 

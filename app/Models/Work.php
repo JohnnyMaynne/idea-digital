@@ -9,6 +9,7 @@ use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
+use App\Traits\ClearsResponseCache;
 use App\Traits\HasAuthor;
 use App\Traits\HasComments;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
@@ -20,7 +21,7 @@ use Spatie\Searchable\SearchResult;
 
 class Work extends Model implements Sortable, Viewable, Searchable
 {
-    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasPosition, HasMetadata, HasAuthor, HasComments, InteractsWithViews;
+    use HasBlocks, HasSlug, HasMedias, HasRevisions, HasPosition, HasMetadata, HasAuthor, HasComments, InteractsWithViews, ClearsResponseCache;
 
     public $metadataFallbacks = [];
 

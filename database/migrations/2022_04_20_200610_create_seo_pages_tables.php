@@ -13,6 +13,7 @@ class CreateSeoPagesTables extends Migration
             $table->string('title', 200)->nullable();
             $table->text('description', 1000)->nullable();
             $table->json('steps')->nullable();
+            $table->json('content')->nullable();
         });
 
         Schema::create('seo_page_revisions', function (Blueprint $table) {

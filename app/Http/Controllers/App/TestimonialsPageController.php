@@ -29,7 +29,8 @@ class TestimonialsPageController extends Controller
         $this->setMetadata($page);
 
         return view('site.pages.testimonials',[
-            'testimonials' => $this->testimonial->get()
+            'testimonials' => $this->testimonial->get(),
+            'page' => $page
         ]);
     }
 }

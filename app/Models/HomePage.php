@@ -6,14 +6,20 @@ namespace App\Models;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRelated;
 use A17\Twill\Models\Model;
+use App\Traits\ClearsResponseCache;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
 
 class HomePage extends Model
 {
-    use HasMedias, HasMetadata, HasRelated;
+    use HasMedias, HasMetadata, HasRelated, ClearsResponseCache;
 
     protected $fillable = [
         'title',
+        'content'
+    ];
+
+    protected $casts = [
+        'content' => 'array'
     ];
 
     public $timestamps = false;

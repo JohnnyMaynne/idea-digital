@@ -11,6 +11,7 @@ class CreateBlogPagesTables extends Migration
         Schema::create('blog_pages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title', 200)->nullable();
+            $table->json('content')->nullable();
         });
     }
 

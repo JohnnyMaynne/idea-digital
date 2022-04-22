@@ -30,16 +30,15 @@ class CasesController extends Controller
         $this->setMetadata($page);
 
         return view('site.pages.cases',[
-            'posts' => $this->work->get()
+            'posts' => $this->work->get(),
+            'page' => $page
         ]);
     }
 
 
     public function show($slug)
     {
-        $work = $this->work->forSlug($slug);
-
-        views($work)->record();
+        $work = $this->work->forSlug($slug) ?? abort(404);
 
         $this->setMetadata($work);
 

@@ -7,13 +7,13 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
+use App\Traits\ClearsResponseCache;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class PostCategory extends Model implements Sortable
 {
-    use HasSlug, HasPosition, HasMedias, HasMetadata;
+    use HasSlug, HasPosition, HasMedias, HasMetadata, ClearsResponseCache;
 
     public $metadataFallbacks = [];
 

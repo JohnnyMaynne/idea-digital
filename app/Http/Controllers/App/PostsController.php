@@ -25,8 +25,6 @@ class PostsController extends Controller
     {
         $item = $this->post->forSlug(request('slug')) ?? abort(404);
 
-        views($item)->record();
-
         $this->setMetadata($item);
 
         return view('site.pages.blog-single',[

@@ -1,3 +1,5 @@
+@props(['page'])
+
 @php
     $route = request()->route()->getName();
 
@@ -14,23 +16,7 @@
     <div class="pt-40 pb-20 relative z-30">
         <x-app.container>
             <div class="text-7xl max-w-[900px] max-w-3xl font-bold">
-                @switch($route)
-                    @case('about-us')
-                        About Idea Digital Agency
-                    @break
-
-                    @case('team')
-                        Team Idea Digital Agency
-                    @break
-
-                    @case('testimonials')
-                        Testimonials about Idea Digital Agency
-                    @break
-
-                    @default
-                        Job in Idea Digital Agency
-                @endswitch
-
+                {{ $page->title }}
             </div>
         </x-app.container>
     </div>

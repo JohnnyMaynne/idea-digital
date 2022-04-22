@@ -1,11 +1,15 @@
-@props(['clients'])
+@props([
+    'clients',
+    'title' => 'Our clients',
+    'subtitle' => 'Here’s what our happy customers say about working with Idea Digital Agency.Here’s what our happy customers say about working with Idea Digital Agency.v',
+])
 
 <x-app.section {{$attributes->class('')}}>
     <x-app.container>
         <x-app.grid>
             <div>
-                <x-app.title>Our clients</x-app.title>
-                <div class="text-gray-500 mt-3">Here’s what our happy customers say about working with Idea Digital Agency.</div>
+                <x-app.title>{{ $title }}</x-app.title>
+                <div class="text-gray-500 mt-3">{!!  $subtitle !!}</div>
             </div>
         </x-app.grid>
         <div class="mt-16">

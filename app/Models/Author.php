@@ -7,15 +7,15 @@ use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
+use App\Traits\ClearsResponseCache;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Spatie\Searchable\Searchable;
 use Spatie\Searchable\SearchResult;
 
 class Author extends Model implements Sortable, Searchable
 {
-    use HasSlug, HasMedias, HasPosition, HasMetadata;
+    use HasSlug, HasMedias, HasPosition, HasMetadata, ClearsResponseCache;
 
     public $metadataFallbacks = [];
 

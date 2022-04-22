@@ -151,14 +151,19 @@ return [
     ],
 
     'settings' => [
-        'title' => 'Settings',
+        'title' => 'Настройки',
         'route' => 'admin.settings',
         'params' => ['section' => 'links'],
         'primary_navigation' => [
             'links' => [
-                'title' => 'Section name',
+                'title' => 'Конфиденциальность',
                 'route' => 'admin.settings',
                 'params' => ['section' => 'links']
+            ],
+            'contacts' => [
+                'title' => 'Контакты',
+                'route' => 'admin.settings',
+                'params' => ['section' => 'contacts']
             ],
         ]
     ],

@@ -38,7 +38,8 @@ class BlogPageController extends Controller
 
         return view('site.pages.blog',[
             'categories' => $this->category->get(),
-            'posts' => $this->post->get()
+            'posts' => $this->post->get(),
+            'page' => $page
         ]);
     }
 }

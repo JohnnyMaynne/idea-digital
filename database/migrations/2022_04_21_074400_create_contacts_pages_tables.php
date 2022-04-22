@@ -11,6 +11,7 @@ class CreateContactsPagesTables extends Migration
         Schema::create('contacts_pages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title', 200)->nullable();
+            $table->json('content')->nullable();
         });
     }
 

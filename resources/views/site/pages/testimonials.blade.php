@@ -3,7 +3,7 @@
 
 @section('content')
     <x-app.page>
-        <x-about-us.hero/>
+        <x-about-us.hero :page="$page"/>
         <x-about-us.tabs/>
 
         <x-app.section class="py-20">

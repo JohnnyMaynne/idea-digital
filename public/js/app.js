@@ -5650,16 +5650,13 @@ window.rating = function () {
   var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
   var model = arguments.length > 1 ? arguments[1] : undefined;
   var count = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+  var rating = arguments.length > 3 ? arguments[3] : undefined;
   return {
     value: value,
     model: model,
     count: count,
-
-    get formatRating() {
-      return Number.parseFloat(this.value).toFixed(2);
-    },
-
-    handler: function handler(rating) {
+    rating: rating,
+    init: function init() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -5669,9 +5666,7 @@ window.rating = function () {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().post("/ratings/".concat(_this.model), {
-                  rating: rating
-                });
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/ratings/' + _this.model);
 
               case 2:
                 res = _context.sent;
@@ -5684,6 +5679,38 @@ window.rating = function () {
             }
           }
         }, _callee);
+      }))();
+    },
+
+    get formatRating() {
+      return Number.parseFloat(this.value).toFixed(2);
+    },
+
+    handler: function handler(rating) {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().post("/ratings/".concat(_this2.model), {
+                  rating: rating
+                });
+
+              case 2:
+                res = _context2.sent;
+                _this2.value = res.data.rating;
+                _this2.count = res.data.count;
+
+              case 5:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
       }))();
     }
   };

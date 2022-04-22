@@ -42,7 +42,7 @@
             ],
             'name' => 'clients',
             'label' => 'Клиенты',
-            'max' => 4,
+            'max' => 100,
         ])
     @endformFieldset
 

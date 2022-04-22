@@ -2,6 +2,7 @@
 
 return [
     'locale' => 'ru',
+
     'dashboard' => [
         'modules' => [
             'App\Models\Post' => [
