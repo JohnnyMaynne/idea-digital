@@ -23,6 +23,7 @@ Route::group(['prefix' => 'content'], function () {
 
     Route::module('posts');
     Route::module('works');
+    Route::module('services');
     Route::module('pages');
     Route::module('authors');
     Route::module('comments');

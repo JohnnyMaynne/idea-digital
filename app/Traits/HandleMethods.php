@@ -13,10 +13,11 @@ trait HandleMethods
             ->get();
     }
 
-    public function related($post, $limit = 3)
+    public function related($post, $limit = 3, $with = [])
     {
         return $this->model
             ->published()
+            ->with($with)
             ->whereCategoryId($post->category_id)
             ->where('id','!=',$post->id)
             ->latest()

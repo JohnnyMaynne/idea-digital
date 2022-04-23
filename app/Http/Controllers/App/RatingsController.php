@@ -9,7 +9,7 @@ use willvincent\Rateable\Rating;
 
 class RatingsController extends Controller
 {
-    public function store(Post $post)
+    public function __invoke(Post $post)
     {
         $rating = new Rating();
 
@@ -19,13 +19,6 @@ class RatingsController extends Controller
 
         return [
             'rating' =>  $post->averageRating ?? 0,
-            'count' =>  $post->ratings()->count(),
-        ];
-    }
-
-    public function show(Post $post) {
-        return [
-            'rating' => $post->averageRating ?? 0,
             'count' =>  $post->ratings()->count(),
         ];
     }

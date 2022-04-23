@@ -15,6 +15,7 @@ use App\Http\Controllers\App\PostsController;
 use App\Http\Controllers\App\RatingsController;
 use App\Http\Controllers\App\SearchController;
 use App\Http\Controllers\App\SeoPageController;
+use App\Http\Controllers\App\ServicesController;
 use App\Http\Controllers\App\TeamPageController;
 use App\Http\Controllers\App\TestimonialsPageController;
 use App\Http\Controllers\App\VacanciesController;
@@ -52,10 +53,13 @@ Route::get('blog/category/{slug}', PostCategoriesController::class)->name('blog.
 // ajax
 Route::post('blog', BlogFormController::class)->name('blog.form');
 
-
 // cases
 Route::get('cases', [CasesController::class,'index'])->name('cases');
 Route::get('cases/{slug}',[CasesController::class,'show'] )->name('cases.single');
+
+// services
+Route::get('services/{slug}', ServicesController::class)->name('services.show');
+
 
 // vacancies
 Route::get('jobs', [VacanciesController::class,'index'])->name('job');
@@ -65,13 +69,11 @@ Route::get('jobs/{slug}', [VacanciesController::class,'show'])->name('job.show')
 Route::get('/authors/{slug}', AuthorsController::class)->name('author');
 
 // comments
-Route::post('comments', [CommentsController::class,'store'])->name('comments.store');
-Route::get('comments/{id}', [CommentsController::class,'show'])->name('comments.show');
+Route::post('comments', CommentsController::class)->name('comments.store');
 
 
 // rating
-Route::post('ratings/{post}', [RatingsController::class,'store'])->name('ratings.store');
-Route::get('ratings/{post}', [RatingsController::class,'show'])->middleware('doNotCacheResponse')->name('ratings.show');
+Route::post('ratings/{post}', RatingsController::class)->name('ratings.store');
 
 // search
 Route::post('search', SearchController::class)->name('search');

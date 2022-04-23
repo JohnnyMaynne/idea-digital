@@ -85,17 +85,11 @@ return [
                 'desktop' => [
                     [
                         'name' => 'desktop',
-                        'ratio' => 16 / 9,
+                        'ratio' => 'auto',
                         'minValues' => [
                             'width' => 100,
                             'height' => 100,
                         ],
-                    ],
-                ],
-                'free' => [
-                    [
-                        'name' => 'free',
-                        'ratio' =>  'auto',
                     ],
                 ],
             ],

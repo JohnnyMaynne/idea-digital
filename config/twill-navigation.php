@@ -69,6 +69,12 @@ return [
                 'module' => true,
             ],
 
+
+            'services' => [
+                'title' => 'Услуги',
+                'module' => true,
+            ],
+
             'pages' => [
                 'title' => 'Страницы',
                 'module' => true,

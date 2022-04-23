@@ -37,8 +37,8 @@ class BlogPageController extends Controller
         $this->setMetadata($page);
 
         return view('site.pages.blog',[
-            'categories' => $this->category->get(),
-            'posts' => $this->post->get(),
+            'categories' => $this->category->get(['slugs']),
+            'posts' => $this->post->get(['medias','author','slugs','blocks']),
             'page' => $page
         ]);
     }

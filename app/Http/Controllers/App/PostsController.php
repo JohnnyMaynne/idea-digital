@@ -34,7 +34,7 @@ class PostsController extends Controller
 
         return view('site.pages.blog-single',[
             'item' => $item,
-            'related' => $this->post->related($item),
+            'related' => $this->post->related($item, 3, ['blocks','slugs','author','medias']),
         ]);
     }
 }
