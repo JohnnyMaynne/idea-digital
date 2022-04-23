@@ -53,16 +53,309 @@
             </x-app.container>
         </x-app.section>
 
-        @if(count($image))
-            <x-app.section class="pt-0 pb-14">
-                <x-app.container>
-                    <img class="block w-full h-auto"
-                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                         data-src="{{ $image['src'] }}" title="{{ $image['alt'] }}" alt="{{ $image['alt'] }}">
-                </x-app.container>
-            </x-app.section>
+        <x-app.section>
+            <x-app.container>
+                <div class="flex items-center justify-between mb-10">
+                    <div class="font-bold text-3xl max-w-lg">Results of our clients</div>
+                    <x-app.slider-nav/>
+                </div>
 
-        @endif
+                <div class="grid grid-cols-2 gap-10">
+                    <div class="flex flex-col bg-gradient-to-bl from-gray-100 to-gray-50">
+                        <div class="p-5 space-y-4">
+                            <div class="flex space-x-6 pb-5 border-b -mx-5 px-5">
+                                <div>
+                                    <div class="font-bold text-blue-600">↑492%</div>
+                                    <div class="text-xs text-gray-500">Growth of organic</div>
+                                </div>
+                            </div>
+                            <div class="text-3xl font-bold">
+                                Daily Medical
+                            </div>
+                            <div class="prose {{ config('ideadigital.editor') }}">
+                                <p>Behind the results robit bachimo positive dynamics.</p>
+                                <p>The visibility of the site has grown significantly. The number of applications and the number of applications for the site with organic Google has increased by 2.5 times and may increase (+ 15-20% of the increase).</p>
+                                <p>From the cob, the number of key words increased by over 10 thousand.</p>
+                                <p>Organic traffic of viruses in 5 times, from 1300 to 6400 cases per month from organic species. Organic channel to become over 60% of the traffic to the site.</p>
+                            </div>
+                            <x-app.read-more>View case</x-app.read-more>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-gradient-to-bl from-gray-100 to-gray-50">
+                        <div class="p-5 space-y-4">
+                            <div class="flex space-x-6 pb-5 border-b -mx-5 px-5">
+                                <div>
+                                    <div class="font-bold text-blue-600">↑304%</div>
+                                    <div class="text-xs text-gray-500">Growth of organic</div>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-blue-600">↑207%</div>
+                                    <div class="text-xs text-gray-500">Increased amount</div>
+                                </div>
+                            </div>
+                            <div class="text-3xl font-bold">Advanced Communities</div>
+                            <div class="prose {{ config('ideadigital.editor') }}">
+                                <p>Advanced Communities is a retailer of software products based on Experience Cloud for Salesforce.The total number of coristuvaches from organic matter grew by <strong>318%</strong> .</p>
+                                <p>The number of new recruits increased by <strong>304%</strong>. The depth of the revision of the sides increased by <strong>65.2%</strong> .</p>
+                                <p>Conversion rate increased by 207%. The number of achieved goals on the site increased by <strong>1,185.71%</strong> .</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </x-app.container>
+        </x-app.section>
+
+        <div class="relative bg-indigo-800">
+            <div class="absolute inset-0">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&&sat=-100" alt="">
+                <div class="absolute inset-0 bg-indigo-800 mix-blend-multiply" aria-hidden="true"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">Get in touch</h1>
+                <p class="mt-6 text-xl text-indigo-100 max-w-3xl">Mattis amet hendrerit dolor, quisque lorem pharetra. Pellentesque lacus nisi urna, arcu sociis eu. Orci vel lectus nisl eget eget ut consectetur. Sit justo viverra non adipisicing elit distinctio.</p>
+            </div>
+        </div>
+
+
+        <x-app.section>
+            <x-app.container>
+                <div class="mb-10">
+                    <div class="font-bold text-3xl max-w-lg">Stages of SEO-promotion</div>
+                </div>
+
+                <div>
+                    <button class="group w-full flex items-center justify-between space-x-4 p-4 hover:bg-gray-100 transition">
+                        <div class="space-x-5 flex items-center flex-1">
+                            <div class="w-16">
+                                <div class="h-10 w-10 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center">1</div>
+                            </div>
+                            <div class="text-xl flex-1 text-left">Conducting a technical analysis of the site</div>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-600" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="p-4 space-x-5 flex items-center flex-1">
+                        <div class="w-16"></div>
+                        <div class="prose flex-1 w-full {{ config('ideadigital.editor') }}">
+                            <p>Презентуємо щомісячний звіт клієнту, обговорюємо його особисто або через Zoom.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </x-app.container>
+        </x-app.section>
+
+        <div class="relative bg-gray-900">
+            <div class="h-80 w-full absolute bottom-0 xl:inset-0 xl:h-full">
+                <div class="h-full w-full xl:grid xl:grid-cols-2">
+                    <div class="h-full xl:relative xl:col-start-2">
+                        <img class="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0" src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100" alt="People working on laptops">
+                        <div aria-hidden="true" class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-900 xl:inset-y-0 xl:left-0 xl:h-full xl:w-32 xl:bg-gradient-to-r"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 xl:grid xl:grid-cols-2 xl:grid-flow-col-dense xl:gap-x-8">
+                <div class="relative pt-12 pb-64 sm:pt-24 sm:pb-64 xl:col-start-1 xl:pb-24">
+                    <p class="mt-3 text-3xl font-extrabold text-white">Get actionable data that will help grow your business</p>
+                    <p class="mt-5 text-lg text-gray-300">Rhoncus sagittis risus arcu erat lectus bibendum. Ut in adipiscing quis in viverra tristique sem. Ornare feugiat viverra eleifend fusce orci in quis amet. Sit in et vitae tortor, massa. Dapibus laoreet amet lacus nibh integer quis. Eu vulputate diam sit tellus quis at.</p>
+                    <div class="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2">
+                        <p>
+                            <span class="block text-2xl font-bold text-white">8K+</span>
+                            <span class="mt-1 block text-base text-gray-300"><span class="font-medium text-white">Companies</span> use laoreet amet lacus nibh integer quis.</span>
+                        </p>
+
+                        <p>
+                            <span class="block text-2xl font-bold text-white">25K+</span>
+                            <span class="mt-1 block text-base text-gray-300"><span class="font-medium text-white">Countries around the globe</span> lacus nibh integer quis.</span>
+                        </p>
+
+                        <p>
+                            <span class="block text-2xl font-bold text-white">98%</span>
+                            <span class="mt-1 block text-base text-gray-300"><span class="font-medium text-white">Customer satisfaction</span> laoreet amet lacus nibh integer quis.</span>
+                        </p>
+
+                        <p>
+                            <span class="block text-2xl font-bold text-white">12M+</span>
+                            <span class="mt-1 block text-base text-gray-300"><span class="font-medium text-white">Issues resolved</span> lacus nibh integer quis.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <x-app.section>
+            <x-app.container>
+                <div class="mb-10">
+                    <div class="font-bold text-3xl max-w-lg">Other services</div>
+                </div>
+
+                <div class="grid gap-10 grid-cols-3">
+                    <a href="#" class="bg-gray-100 p-5 space-y-2 transition hover:bg-gray-50">
+                        <div class="text-2xl font-bold">SEO site audit</div>
+                        <div class="prose-sm {{ config('ideadigital.editor') }}">
+                            <p>The visibility of the site has grown significantly. The number of applications and the number of applications for the site with organic Google has increased by 2.5 times and may increase (+ 15-20% of the increase).</p>
+                        </div>
+                    </a>
+                    <a href="#" class="bg-gray-100 p-5 space-y-2 transition hover:bg-gray-50">
+                        <div class="text-2xl font-bold">Site preparation before launch</div>
+                        <div class="prose-sm {{ config('ideadigital.editor') }}">
+                            <p>The site is a business tool, and it should not only be visually pleasing and user-friendly, but also search engine optimized.</p>
+                        </div>
+                    </a>
+                    <a href="#" class="bg-gray-100 p-5 space-y-2 transition hover:bg-gray-50">
+                        <div class="text-2xl font-bold">Collection of the semantic core of the site</div>
+                        <div class="prose-sm {{ config('ideadigital.editor') }}">
+                            <p>Semantic kernel collection services are sought after by users who are already actively involved in SEO-promotion of their site or vice versa, just thinking about this promotion.</p>
+                        </div>
+                    </a>
+                </div>
+
+            </x-app.container>
+        </x-app.section>
+
+        <div class="bg-gray-100">
+            <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-20">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-extrabold sm:text-4xl">Trusted by developers from over 80 planets</h2>
+                    <p class="mt-3 text-xl sm:mt-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus repellat laudantium.</p>
+                </div>
+                <dl class="mt-10 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">
+                    <div class="flex flex-col">
+                        <dt class="order-2 mt-2 text-lg leading-6 font-medium">Pepperoni</dt>
+                        <dd class="order-1 text-5xl font-extrabold">100%</dd>
+                    </div>
+                    <div class="flex flex-col mt-10 sm:mt-0">
+                        <dt class="order-2 mt-2 text-lg leading-6 font-medium">Delivery</dt>
+                        <dd class="order-1 text-5xl font-extrabold">24/7</dd>
+                    </div>
+                    <div class="flex flex-col mt-10 sm:mt-0">
+                        <dt class="order-2 mt-2 text-lg leading-6 font-medium">Calories</dt>
+                        <dd class="order-1 text-5xl font-extrabold">100k+</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <x-app.section>
+            <x-app.container>
+                <div class="max-w-4xl space-y-4">
+                    <div class="text-5xl font-bold">"The social and economic benefits of accelerating clean energy transitions are huge, and the costs of inaction are immense."</div>
+                    <div class="flex items-center space-x-3">
+                        <img class="h-10 w-10 rounded-full" src="https://idea-digital.test/img/2c30fc7e-8372-4aab-9b6f-47914194eaa9/6012d3bed3273569148204.jpeg?fm=jpg&amp;q=100&amp;fit=max&amp;crop=620%2C620%2C0%2C0&amp;w=150" title="qweqwe" alt="qweqwe">
+
+                        <div class="flex-1">
+                            <div class="text-sm ">Dmytro Poshcheniy</div>
+                            <div class="text-gray-500 text-sm">Co-founder Chameleon</div>
+                        </div>
+                    </div>
+                </div>
+            </x-app.container>
+        </x-app.section>
+
+        <x-app.section>
+            <x-app.container>
+               <x-app.grid>
+                    <div>
+                        <div class="text-3xl font-bold">Tools with some practical</div>
+
+                    </div>
+                    <div class="mt-8 grid grid-cols-2 gap-5 md:grid-cols-3 lg:mt-0 lg:grid-cols-4">
+                        <div class="col-span-1 flex justify-center p-2">
+                            <img class="max-h-12" src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg" alt="Workcation">
+                        </div>
+                        <div class="col-span-1 flex justify-center p-2">
+                            <img class="max-h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage">
+                        </div>
+                        <div class="col-span-1 flex justify-center p-2">
+                            <img class="max-h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple">
+                        </div>
+                        <div class="col-span-1 flex justify-center p-2">
+                            <img class="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel">
+                        </div>
+                        <div class="col-span-1 flex justify-center p-2">
+                            <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
+                        </div>
+                        <div class="col-span-1 flex justify-center p-2">
+                            <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic">
+                        </div>
+                        <div class="col-span-1 flex justify-center p-2">
+                            <img class="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel">
+                        </div>
+                        <div class="col-span-1 flex justify-center p-2">
+                            <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
+                        </div>
+                        <div class="col-span-1 flex justify-center p-2">
+                            <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic">
+                        </div>
+                        <div class="col-span-1 flex justify-center p-2">
+                            <img class="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel">
+                        </div>
+                        <div class="col-span-1 flex justify-center p-2">
+                            <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
+                        </div>
+                        <div class="col-span-1 flex justify-center p-2">
+                            <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic">
+                        </div>
+                    </div>
+               </x-app.grid>
+            </x-app.container>
+        </x-app.section>
+
+       <x-app.section>
+           <x-app.container>
+               <h2 class="text-3xl font-bold">Frequently asked questions</h2>
+               <div class="mt-6 pt-10">
+                   <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12">
+                       <div>
+                           <dt class="text-lg leading-6 font-medium text-gray-900">What&#039;s the best thing about Switzerland?</dt>
+                           <dd class="mt-2 text-base text-gray-500">I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.</dd>
+                       </div>
+
+                       <!-- More questions... -->
+                   </dl>
+               </div>
+           </x-app.container>
+       </x-app.section>
+
+
+        <x-app.section class="bg-gray-50">
+            <x-app.container>
+                <div class="flex flex-col items-center text-center">
+                    <div class="text-3xl font-bold">
+                        <span class="block">Ready to dive in?</span>
+                        <span class="block">Start your free trial today.</span>
+                    </div>
+                    <div class="mt-8 flex justify-center">
+                        <div class="inline-flex rounded-md shadow">
+                            <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"> Get started </a>
+                        </div>
+                        <div class="ml-3 inline-flex">
+                            <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200"> Learn more </a>
+                        </div>
+                    </div>
+                </div>
+            </x-app.container>
+        </x-app.section>
+
+        <x-app.section>
+            <x-app.container>
+                <div class="pb-16 xl:flex xl:items-center xl:justify-between space-x-10">
+                    <div class="flex-1">
+                        <h1 class="text-3xl font-bold">
+                            <span class="text-gray-900">Quality of SEO promotion from</span>
+                            <span class="text-indigo-600">$2000</span>
+                        </h1>
+                        <p class="mt-5 text-gray-500 max-w-4xl">Tell us what goals you want to reach for the results of the project, and we are preparing an analysis of your site, the plan is working on that budget, which is necessary for you.</p>
+                    </div>
+                    <a href="#" class="mt-8 w-full bg-indigo-600 border border-transparent px-5 py-3 inline-flex items-center justify-center text-base font-medium rounded-md text-white hover:bg-indigo-700 sm:mt-10 sm:w-auto xl:mt-0">Get request</a>
+                </div>
+            </x-app.container>
+        </x-app.section>
 
 
         <x-app.section class="py-14">
