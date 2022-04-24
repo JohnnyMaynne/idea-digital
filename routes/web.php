@@ -38,7 +38,7 @@ Route::get('/', HomeController::class)->name('home');
 
 
 // seo page
-Route::get('seo', SeoPageController::class)->name('seo');
+Route::get('seo/', SeoPageController::class)->name('seo');
 
 // pages
 Route::get('about-us', AboutUsPageController::class)->name('about-us');

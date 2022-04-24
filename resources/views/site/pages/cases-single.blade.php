@@ -218,34 +218,37 @@
             </x-app.container>
         </x-app.section>
 
-        <div class="bg-gray-100">
-            <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-20">
+        <x-app.section class="relative">
+            <x-app.container class="relative z-30 text-white">
                 <div class="max-w-4xl mx-auto text-center">
                     <h2 class="text-3xl font-extrabold sm:text-4xl">Trusted by developers from over 80 planets</h2>
-                    <p class="mt-3 text-xl sm:mt-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus repellat laudantium.</p>
+                    <p class="mt-3 sm:mt-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus repellat laudantium.</p>
                 </div>
                 <dl class="mt-10 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">
                     <div class="flex flex-col">
-                        <dt class="order-2 mt-2 text-lg leading-6 font-medium">Pepperoni</dt>
+                        <dt class="order-2 mt-2 leading-6 font-medium">Pepperoni</dt>
                         <dd class="order-1 text-5xl font-extrabold">100%</dd>
                     </div>
                     <div class="flex flex-col mt-10 sm:mt-0">
-                        <dt class="order-2 mt-2 text-lg leading-6 font-medium">Delivery</dt>
+                        <dt class="order-2 mt-2 leading-6 font-medium">Delivery</dt>
                         <dd class="order-1 text-5xl font-extrabold">24/7</dd>
                     </div>
                     <div class="flex flex-col mt-10 sm:mt-0">
-                        <dt class="order-2 mt-2 text-lg leading-6 font-medium">Calories</dt>
+                        <dt class="order-2 mt-2 leading-6 font-medium">Calories</dt>
                         <dd class="order-1 text-5xl font-extrabold">100k+</dd>
                     </div>
                 </dl>
-            </div>
-        </div>
+            </x-app.container>
+            <div class="z-20 absolute h-full w-full left-0 top-0 opacity-90 bg-gradient-to-bl from-gray-800 to-gray-900"></div>
+            <img class="z-10 absolute h-full w-full left-0 top-0 object-cover grayscale" src="https://unsplash.com/photos/-uHVRvDr7pg/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTZ8fHRlYW18ZW58MHx8fHwxNjUwNzc4NTEz&force=true&w=1920">
+        </x-app.section>
+
 
         <x-app.section>
             <x-app.container>
-                <div class="max-w-4xl space-y-4">
+                <div class="max-w-4xl">
                     <div class="text-5xl font-bold">"The social and economic benefits of accelerating clean energy transitions are huge, and the costs of inaction are immense."</div>
-                    <div class="flex items-center space-x-3">
+                    <div class="flex items-center space-x-3 mt-4">
                         <img class="h-10 w-10 rounded-full" src="https://idea-digital.test/img/2c30fc7e-8372-4aab-9b6f-47914194eaa9/6012d3bed3273569148204.jpeg?fm=jpg&amp;q=100&amp;fit=max&amp;crop=620%2C620%2C0%2C0&amp;w=150" title="qweqwe" alt="qweqwe">
 
                         <div class="flex-1">
@@ -253,56 +256,55 @@
                             <div class="text-gray-500 text-sm">Co-founder Chameleon</div>
                         </div>
                     </div>
+                    <x-app.read-more class="mt-12">Read case</x-app.read-more>
+
                 </div>
             </x-app.container>
         </x-app.section>
 
         <x-app.section>
             <x-app.container>
-               <x-app.grid>
-                    <div>
-                        <div class="text-3xl font-bold">Tools with some practical</div>
-
+                <div class="mb-10">
+                    <div class="text-3xl font-bold">Tools with some practical</div>
+                </div>
+                <div class="grid grid-cols-2 gap-10 md:grid-cols-3 lg:mt-0 lg:grid-cols-4">
+                    <div class="col-span-1 flex justify-center">
+                        <img class="max-h-12" src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg" alt="Workcation">
                     </div>
-                    <div class="mt-8 grid grid-cols-2 gap-5 md:grid-cols-3 lg:mt-0 lg:grid-cols-4">
-                        <div class="col-span-1 flex justify-center p-2">
-                            <img class="max-h-12" src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg" alt="Workcation">
-                        </div>
-                        <div class="col-span-1 flex justify-center p-2">
-                            <img class="max-h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage">
-                        </div>
-                        <div class="col-span-1 flex justify-center p-2">
-                            <img class="max-h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple">
-                        </div>
-                        <div class="col-span-1 flex justify-center p-2">
-                            <img class="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel">
-                        </div>
-                        <div class="col-span-1 flex justify-center p-2">
-                            <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
-                        </div>
-                        <div class="col-span-1 flex justify-center p-2">
-                            <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic">
-                        </div>
-                        <div class="col-span-1 flex justify-center p-2">
-                            <img class="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel">
-                        </div>
-                        <div class="col-span-1 flex justify-center p-2">
-                            <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
-                        </div>
-                        <div class="col-span-1 flex justify-center p-2">
-                            <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic">
-                        </div>
-                        <div class="col-span-1 flex justify-center p-2">
-                            <img class="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel">
-                        </div>
-                        <div class="col-span-1 flex justify-center p-2">
-                            <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
-                        </div>
-                        <div class="col-span-1 flex justify-center p-2">
-                            <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic">
-                        </div>
+                    <div class="col-span-1 flex justify-center">
+                        <img class="max-h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage">
                     </div>
-               </x-app.grid>
+                    <div class="col-span-1 flex justify-center">
+                        <img class="max-h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple">
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <img class="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel">
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic">
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <img class="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel">
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic">
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <img class="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel">
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <img class="max-h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
+                    </div>
+                    <div class="col-span-1 flex justify-center">
+                        <img class="max-h-12" src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic">
+                    </div>
+                </div>
             </x-app.container>
         </x-app.section>
 
@@ -315,8 +317,22 @@
                            <dt class="text-lg leading-6 font-medium text-gray-900">What&#039;s the best thing about Switzerland?</dt>
                            <dd class="mt-2 text-base text-gray-500">I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.</dd>
                        </div>
-
-                       <!-- More questions... -->
+                       <div>
+                           <dt class="text-lg leading-6 font-medium text-gray-900">What&#039;s the best thing about Switzerland?</dt>
+                           <dd class="mt-2 text-base text-gray-500">I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.</dd>
+                       </div>
+                       <div>
+                           <dt class="text-lg leading-6 font-medium text-gray-900">What&#039;s the best thing about Switzerland?</dt>
+                           <dd class="mt-2 text-base text-gray-500">I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.</dd>
+                       </div>
+                       <div>
+                           <dt class="text-lg leading-6 font-medium text-gray-900">What&#039;s the best thing about Switzerland?</dt>
+                           <dd class="mt-2 text-base text-gray-500">I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.</dd>
+                       </div>
+                       <div>
+                           <dt class="text-lg leading-6 font-medium text-gray-900">What&#039;s the best thing about Switzerland?</dt>
+                           <dd class="mt-2 text-base text-gray-500">I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.</dd>
+                       </div>
                    </dl>
                </div>
            </x-app.container>

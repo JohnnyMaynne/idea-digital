@@ -37,7 +37,6 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            //\Spatie\ResponseCache\Middlewares\CacheResponse::class,
         ],
 
         'api' => [
@@ -48,6 +47,12 @@ class Kernel extends HttpKernel
 
         'breadcrumbs' => [
             \Spatie\ResponseCache\Middlewares\CacheResponse::class,
+        ],
+
+        'front' => [
+           // \Spatie\ResponseCache\Middlewares\CacheResponse::class,
+            \App\Http\Middleware\TrailingSlashes::class,
+            \App\Http\Middleware\RouteToLowercase::class,
         ]
     ];
 

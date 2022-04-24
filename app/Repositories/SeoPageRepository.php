@@ -13,9 +13,11 @@ class SeoPageRepository extends ModuleRepository
 {
     use HandleBlocks, HandleJsonRepeaters, HandleMetadata;
 
-    protected $relatedBrowsers = ['works'];
+    protected $relatedBrowsers = [
+        'works'
+    ];
 
-    protected $jsonRepeaters = [
+    protected array $jsonRepeaters = [
         'steps'
     ];
 

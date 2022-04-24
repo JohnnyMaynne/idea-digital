@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\UrlGenerator;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/';
 
     /**
      * The controller namespace for the application.
@@ -43,7 +44,7 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware('web')
+            Route::middleware(['web','front'])
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
@@ -59,5 +60,26 @@ class RouteServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });
+    }
+
+    public function register()
+    {
+        parent::register();
+
+        $this->app->singleton('url', function($app) {
+            $routes = $app['router']->getRoutes();
+            return new UrlGenerator(
+                $routes, $app->rebinding(
+                'request', $this->requestRebinder()
+            ), $app['config']['app.asset_url']
+            );
+        });
+    }
+
+    protected function requestRebinder(): \Closure
+    {
+        return function ($app, $request) {
+            $app['url']->setRequest($request);
+        };
     }
 }
