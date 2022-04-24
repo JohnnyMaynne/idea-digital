@@ -26,13 +26,35 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $settings =  app(SettingRepository::class);
-        $page = app(PageRepository::class);
+        $settings = app(SettingRepository::class)
+            ->all()
+            ->flatMap(fn($q) => [$q->key => $q->value])
+            ->toArray();
 
-        View::share('settings',[
-            'privacy_policy' => $page->find($settings->byKey('privacy_policy')),
-            'cookie_policy' => $page->find($settings->byKey('cookie_policy')),
-            'terms_conditions' => $page->find($settings->byKey('terms_conditions'))
+        $pages = app(PageRepository::class)
+            ->whereIn('id', [
+                $settings['privacy_policy'],
+                $settings['cookie_policy'],
+                $settings['terms_conditions']
+            ])
+            ->with('slugs')
+            ->get();
+
+        $this->app->singleton('settings', fn () => $settings);
+
+        View::share('settings', [
+            'privacy_policy' => $pages->where('id', $settings['privacy_policy'])->first(),
+            'cookie_policy' => $pages->where('id', $settings['cookie_policy'])->first(),
+            'terms_conditions' => $pages->where('id', $settings['terms_conditions'])->first(),
         ]);
+
+        View::share('menu', [
+            ['route' => 'seo', 'title' => 'Seo'],
+            ['route' => 'cases', 'title' => 'Cases'],
+            ['route' => 'about-us', 'title' => 'About Us'],
+            ['route' => 'blog', 'title' => 'Blog'],
+            ['route' => 'contacts', 'title' => 'Contacts'],
+        ]);
+
     }
 }

@@ -69,11 +69,9 @@
                 <div class="flex justify-end">
                     <div class="mt-8 md:mt-0 md:order-1">
                         <div class="text-sm flex items-center  text-gray-500 space-x-4">
-                            <a class="block" href="">SEO</a>
-                            <a class="block" href="">Casesy</a>
-                            <a class="block" href="">About us</a>
-                            <a class="block" href="">Blog</a>
-                            <a class="block" href="">Contact us</a>
+                            @foreach($menu as $item)
+                                <a class="block" href="{{ route($item['route']) }}">{{ $item['title'] }}</a>
+                            @endforeach
                         </div>
                     </div>
                 </div>

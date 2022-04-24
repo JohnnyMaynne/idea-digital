@@ -2,34 +2,27 @@
 
 namespace App\Services\Schema;
 
-use A17\Twill\Repositories\SettingRepository;
 use Spatie\SchemaOrg\Schema;
 
 class WebPageSchema extends SchemaBase
 {
-
-    private SettingRepository $setting;
-
-    public function __construct(SettingRepository $setting)
-    {
-        $this->setting = $setting;
-    }
-
     public function render(): string
     {
+        $settings = app('settings');
+
         return Schema::organization()
             ->name('Idea Digital')
             ->url(route('home'))
             ->logo(asset('assets/app/images/logo-idea.svg'))
             ->contactPoint(Schema::contactPoint()
-                ->telephone($this->setting->byKey('phone'))
+                ->telephone($settings['phone'])
                 ->contactType('customer service')
             )
             ->sameAs([
-                $this->setting->byKey('facebook'),
-                $this->setting->byKey('instagram'),
-                $this->setting->byKey('linked'),
-                $this->setting->byKey('youtube'),
+                $settings['facebook'],
+                $settings['instagram'],
+                $settings['linked'],
+                $settings['youtube'],
             ]);
     }
 }

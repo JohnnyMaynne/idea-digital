@@ -3,28 +3,23 @@
 ])
 
 
-
-@php
-    $items = [
-        ['route' => route('seo'),'title' => 'Seo' ],
-        ['route' => route('cases'),'title' => 'Cases' ],
-        ['route' => route('about-us'),'title' => 'About Us' ],
-        ['route' => route('blog'),'title' => 'Blog' ],
-        ['route' => route('contacts'),'title' => 'Contacts' ],
-];
-@endphp
-
-
 <header class="relative z-40 {{ $invert ? 'text-white' : 'text-gray-900' }}">
     <x-app.container>
         <div class="flex items-center justify-between h-24">
-            <a href="{{ route('home') }}">
-             <x-app.logo :invert="$invert"/>
-            </a>
+            @if(request()->route()->getName() === 'home')
+                <span>
+                    <x-app.logo :invert="$invert"/>
+                </span>
+            @else
+                <a href="{{ route('home') }}">
+                    <x-app.logo :invert="$invert"/>
+                </a>
+            @endif
+
             <ul class="text-lg leading-none flex items-center">
-                @foreach($items as $item)
+                @foreach($menu as $item)
                     <li>
-                        <a class="px-8 py-4 font-medium" href="{{ $item['route'] }}">{{ $item['title'] }}</a>
+                        <a class="px-8 py-4 font-medium" href="{{ route($item['route']) }}">{{ $item['title'] }}</a>
                     </li>
                 @endforeach
                     <li>
