@@ -54,7 +54,7 @@ class RatingReplacer implements Replacer
             ->route('slug'));
 
 
-        return viewComponent::render('app.rating', [
+        return ViewComponent::render('app.rating', [
             'model' => $record,
         ]);
 

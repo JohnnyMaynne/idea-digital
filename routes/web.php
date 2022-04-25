@@ -19,7 +19,6 @@ use App\Http\Controllers\App\ServicesController;
 use App\Http\Controllers\App\TeamPageController;
 use App\Http\Controllers\App\TestimonialsPageController;
 use App\Http\Controllers\App\VacanciesController;
-use App\Http\Controllers\App\ViewsController;
 use Illuminate\Support\Facades\Route;
 
 /*

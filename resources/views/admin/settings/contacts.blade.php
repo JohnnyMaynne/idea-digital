@@ -11,7 +11,7 @@
 @section('fieldsets')
     @formFieldset(['id' => 'main', 'title' => 'Основные контакты'])
         @formField('input', [
-            'name' => 'adddress',
+            'name' => 'address',
             'label' => 'Адрес',
         ])
         @formField('input', [
@@ -46,7 +46,7 @@
         ])
         @formField('input', [
             'label' => 'Twitter',
-            'name' => 'facebook',
+            'name' => 'twitter',
         ])
         @formField('input', [
             'label' => 'Linked',

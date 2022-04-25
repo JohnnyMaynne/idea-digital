@@ -50,7 +50,7 @@ class Kernel extends HttpKernel
         ],
 
         'front' => [
-           // \Spatie\ResponseCache\Middlewares\CacheResponse::class,
+            //\Spatie\ResponseCache\Middlewares\CacheResponse::class,
             \App\Http\Middleware\TrailingSlashes::class,
             \App\Http\Middleware\RouteToLowercase::class,
         ]

@@ -6,7 +6,7 @@
     $excerpt = $blog ? \App\Helpers\TextHelpers::getExcerpt($post->renderBlocks(), 30) : \App\Helpers\TextHelpers::getExcerpt($post->description, 30)
 @endphp
 
-<div>
+<div {{ $attributes->class('') }}>
     @if(count($image))
         <a href="{{ $link }}" class="block transition hover:opacity-80">
             <img class="w-full h-auto object-cover"
@@ -22,4 +22,5 @@
     </a>
     <div class="mt-2 text-gray-500">{{ $excerpt }}</div>
     <x-app.read-more :href="$link" class="mt-2">Read more</x-app.read-more>
+
 </div>

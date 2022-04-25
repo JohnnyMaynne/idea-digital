@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         \App\Providers\BreadcrumbsServiceProvider::class,
         \App\Providers\ViewServiceProvider::class,
+        \App\Providers\SettingsServiceProvider::class,
 
     ],
 

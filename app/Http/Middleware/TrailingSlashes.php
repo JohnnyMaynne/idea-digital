@@ -12,12 +12,16 @@ class TrailingSlashes
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!preg_match('/.+\/$/', $request->getRequestUri()) && $request->route()->getName() !== 'home')
+        if (!preg_match('/.+\/$/', $request->getRequestUri())
+            && $request->route()->getName() !== 'home'
+            && !count($request->query())
+        )
         {
             $base_url = 'https://' . config('app.url');
 
             return redirect($base_url.$request->getRequestUri() . '/');
         }
+
         return $next($request);
     }
 }

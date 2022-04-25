@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     'pages' => [
         'title' => 'Разделы',
         'route' => 'admin.pages.homePage',
@@ -41,7 +40,9 @@ return [
             'contactsPage' => [
                 'title' => 'Контакты',
                 'singleton' => true,
-            ]
+            ],
+
+
         ]
     ],
 
@@ -140,21 +141,22 @@ return [
         ]
     ],
 
-    'feedback' => [
-        'title' => 'Обратная связь',
-        'route' => 'admin.feedback.emails.index',
-        'primary_navigation' => [
-            'emails' => [
-                'title' => 'Обратная связь',
-                'module' => true,
-            ],
+//    'feedback' => [
+//        'title' => 'Обратная связь',
+//        'route' => 'admin.feedback.emails.index',
+//        'primary_navigation' => [
+//            'emails' => [
+//                'title' => 'Обратная связь',
+//                'module' => true,
+//            ],
+//
+//            'subscribers' => [
+//                'title' => 'Подписчики',
+//                'module' => true,
+//            ],
+//        ]
+//    ],
 
-            'subscribers' => [
-                'title' => 'Подписчики',
-                'module' => true,
-            ],
-        ]
-    ],
 
     'settings' => [
         'title' => 'Настройки',

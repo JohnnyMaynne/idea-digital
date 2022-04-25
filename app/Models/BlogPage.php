@@ -37,4 +37,7 @@ class BlogPage extends Model
         ],
     ];
 
+    public function getField($field) {
+        return $this->content[$field] ?? null;
+    }
 }

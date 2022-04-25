@@ -27,7 +27,7 @@
         <div class="sm:col-span-2">
             <div class="flex justify-between">
                 <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
-                <span id="phone-description" class="text-sm text-gray-500">Optional</span>
+                <span class="text-sm text-gray-500">Optional</span>
             </div>
             <div class="mt-1">
                 <input x-model="form.phone" type="text" name="phone" id="phone" autocomplete="tel" aria-describedby="phone-description" class="block w-full border-0 border-b border-gray-300 bg-gray-50 focus:border-blue-600 focus:ring-0 sm:text-sm">
@@ -35,48 +35,20 @@
         </div>
         <div class="sm:col-span-2">
             <div class="flex justify-between">
+                <label for="how-did-you-hear-about-us" class="block text-sm font-medium text-gray-700">How did you hear about us?</label>
+                <span class="text-sm text-gray-500">Optional</span>
+            </div>
+            <div class="mt-1">
+                <input x-model="form.source" type="text" name="how-did-you-hear-about-us" id="how-did-you-hear-about-us" class="block w-full border-0 border-b border-gray-300 bg-gray-50 focus:border-blue-600 focus:ring-0 sm:text-sm">
+            </div>
+        </div>
+        <div class="sm:col-span-2">
+            <div class="flex justify-between">
                 <label for="how-can-we-help" class="block text-sm font-medium text-gray-700">How can we help you?</label>
-                <span id="how-can-we-help-description" class="text-sm text-gray-500">Max. 500 characters</span>
+                <span  class="text-sm text-gray-500">Optinal</span>
             </div>
             <div class="mt-1">
                 <textarea x-data="textarea()" @input="resize()" x-model="form.message" id="how-can-we-help" name="how-can-we-help" aria-describedby="how-can-we-help-description" rows="4" class="block w-full border-0 border-b border-gray-300 bg-gray-50 focus:border-blue-600 focus:ring-0 sm:text-sm resize-none overflow-hidden"></textarea>
-            </div>
-        </div>
-        <fieldset class="sm:col-span-2">
-            <legend class="block text-sm font-medium text-gray-700">
-                Expected budget
-            </legend>
-            <div class="mt-4 grid grid-cols-1 gap-y-4">
-                <div class="flex items-center">
-                    <input x-model="form.budget" id="budget-under-25k" name="budget" value="under_25k" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
-                    <label for="budget-under-25k" class="ml-3">
-                        <span class="block text-sm text-gray-700">Less than $25K</span>
-                    </label>
-                </div>
-                <div class="flex items-center">
-                    <input x-model="form.budget" id="budget-25k-50k" name="budget" value="25k-50k" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
-                    <label for="budget-25k-50k" class="ml-3">
-                        <span class="block text-sm text-gray-700">$25K – $50K</span>
-                    </label>
-                </div>
-                <div class="flex items-center">
-                    <input x-model="form.budget" id="budget-50k-100k" name="budget" value="50k-100k" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
-                    <label for="budget-50k-100k" class="ml-3">
-                        <span class="block text-sm text-gray-700">$50K – $100K</span>
-                    </label>
-                </div>
-                <div class="flex items-center">
-                    <input x-model="form.budget" id="budget-over-100k" name="budget" value="over_100k" type="radio" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300">
-                    <label for="budget-over-100k" class="ml-3">
-                        <span class="block text-sm text-gray-700">$100K+</span>
-                    </label>
-                </div>
-            </div>
-        </fieldset>
-        <div class="sm:col-span-2">
-            <label for="how-did-you-hear-about-us" class="block text-sm font-medium text-gray-700">How did you hear about us?</label>
-            <div class="mt-1">
-                <input x-model="form.source" type="text" name="how-did-you-hear-about-us" id="how-did-you-hear-about-us" class="block w-full border-0 border-b border-gray-300 bg-gray-50 focus:border-blue-600 focus:ring-0 sm:text-sm">
             </div>
         </div>
         <div class="text-right sm:col-span-2">
@@ -99,15 +71,12 @@
                 <dl class="mt-2 text-base text-gray-500">
                     <div>
                         <dd>
-                            support@example.com
+                            <a href="mailto:{{ settings('email') }}">{{ settings('email') }}</a>
                         </dd>
                     </div>
                     <div class="mt-1">
-                        <dt class="sr-only">
-                            Phone number
-                        </dt>
                         <dd>
-                            +1 (555) 123-4567
+                            <a href="tel:{{ settings('phone') }}">{{ settings('phone') }}</a>
                         </dd>
                     </div>
                 </dl>
@@ -119,19 +88,8 @@
                 </h3>
                 <dl class="mt-2 text-base text-gray-500">
                     <div>
-                        <dt class="sr-only">
-                            Email
-                        </dt>
                         <dd>
-                            support@example.com
-                        </dd>
-                    </div>
-                    <div class="mt-1">
-                        <dt class="sr-only">
-                            Phone number
-                        </dt>
-                        <dd>
-                            +1 (555) 123-4567
+                            {{ settings('address') }}
                         </dd>
                     </div>
                 </dl>
@@ -143,19 +101,28 @@
                 </h3>
                 <dl class="mt-2 text-base text-gray-500">
                     <div>
-                        <dt class="sr-only">
-                            Email
-                        </dt>
                         <dd>
-                            support@example.com
+                            <a target="_blank" rel="nofollow" href="{{ settings('facebook') }}">Facebook</a>
                         </dd>
                     </div>
                     <div class="mt-1">
-                        <dt class="sr-only">
-                            Phone number
-                        </dt>
                         <dd>
-                            +1 (555) 123-4567
+                            <a target="_blank" rel="nofollow" href="{{ settings('instagram') }}">Instagram</a>
+                        </dd>
+                    </div>
+                    <div class="mt-1">
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="{{ settings('twitter') }}">Twitter</a>
+                        </dd>
+                    </div>
+                    <div class="mt-1">
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="{{ settings('youtube') }}">Youtube</a>
+                        </dd>
+                    </div>
+                    <div class="mt-1">
+                        <dd>
+                            <a target="_blank" rel="nofollow" href="{{ settings('linked') }}">Linked</a>
                         </dd>
                     </div>
                 </dl>
@@ -167,19 +134,8 @@
                 </h3>
                 <dl class="mt-2 text-base text-gray-500">
                     <div>
-                        <dt class="sr-only">
-                            Email
-                        </dt>
                         <dd>
-                            support@example.com
-                        </dd>
-                    </div>
-                    <div class="mt-1">
-                        <dt class="sr-only">
-                            Phone number
-                        </dt>
-                        <dd>
-                            +1 (555) 123-4567
+                            <a  rel="nofollow" target="_blank" href="mailto:{{ settings('hr_email') }}">{{ settings('hr_email') }}</a>
                         </dd>
                     </div>
                 </dl>
@@ -188,7 +144,7 @@
             <div class="text-base text-gray-500">
                 Looking for careers?
                 <!-- space -->
-                <a href="#" class="font-medium text-gray-700">View all job openings</a>.
+                <a href="{{ route('job') }}" class="font-medium text-gray-700">View all job openings</a>.
             </div>
 
         </div>

@@ -1,12 +1,17 @@
-@props(['questions'])
+@props([
+    'questions',
+    'title' => 'Questions and answers',
+    'subtitle' => 'Here’s what our happy customers say about working with Idea Digital Agency.',
+])
+
 
 <x-app.section>
     @if(count($questions))
         <x-app.container>
             <x-app.grid>
                 <div>
-                    <x-app.title>Questions and answers</x-app.title>
-                    <div class="text-gray-500 mt-3">Here’s what our happy customers say about working with Idea Digital Agency.</div>
+                    <x-app.title>{{ $title }}</x-app.title>
+                    <div class="text-gray-500 mt-3">{!! $subtitle !!}</div>
                 </div>
             </x-app.grid>
             <div x-data="faq({{ $questions->first()->id}})" class="mt-16">

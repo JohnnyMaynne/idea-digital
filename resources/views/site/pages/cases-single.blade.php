@@ -308,7 +308,27 @@
             </x-app.container>
         </x-app.section>
 
-       <x-app.section>
+        <x-app.section>
+            <x-app.container>
+                <div class="bg-gray-900 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+                    <div class="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
+                        <div class="lg:self-center">
+                            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                                <span class="block">Ready to dive in?</span>
+                                <span class="block">Start your free trial today.</span>
+                            </h2>
+                            <p class="mt-4 text-gray-400">Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.</p>
+                            <a href="#" class="mt-8 bg-white border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium">Contact with us</a>
+                        </div>
+                    </div>
+                    <div class="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
+                        <img class="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20" src="https://unsplash.com/photos/XkKCui44iM0/download?force=true&w=1920" alt="App screenshot">
+                    </div>
+                </div>
+            </x-app.container>
+        </x-app.section>
+
+        <x-app.section>
            <x-app.container>
                <h2 class="text-3xl font-bold">Frequently asked questions</h2>
                <div class="mt-6 pt-10">
@@ -339,7 +359,136 @@
        </x-app.section>
 
 
-        <x-app.section class="bg-gray-50">
+        <x-app.section class="relative bg-indigo-700">
+            <x-app.container>
+                <h2 class="text-3xl font-extrabold text-white tracking-tight">Inbox support built for efficiency</h2>
+                <p class="mt-4 max-w-3xl text-lg text-indigo-200">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis. Blandit aliquam sit nisl euismod mattis in.</p>
+                <div class="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
+                            <div>
+                                <div>
+          <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+            <!-- Heroicon name: outline/inbox -->
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+            </svg>
+          </span>
+                                </div>
+                                <div class="mt-6">
+                                    <h3 class="text-lg font-medium text-white">Unlimited Inboxes</h3>
+                                    <p class="mt-2 text-base text-indigo-200">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+          <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+            <!-- Heroicon name: outline/users -->
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </span>
+                                </div>
+                                <div class="mt-6">
+                                    <h3 class="text-lg font-medium text-white">Manage Team Members</h3>
+                                    <p class="mt-2 text-base text-indigo-200">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+          <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+            <!-- Heroicon name: outline/trash -->
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg>
+          </span>
+                                </div>
+                                <div class="mt-6">
+                                    <h3 class="text-lg font-medium text-white">Spam Report</h3>
+                                    <p class="mt-2 text-base text-indigo-200">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+          <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+            <!-- Heroicon name: outline/pencil-alt -->
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+          </span>
+                                </div>
+                                <div class="mt-6">
+                                    <h3 class="text-lg font-medium text-white">Compose in Markdown</h3>
+                                    <p class="mt-2 text-base text-indigo-200">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+          <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+            <!-- Heroicon name: outline/document-report -->
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </span>
+                                </div>
+                                <div class="mt-6">
+                                    <h3 class="text-lg font-medium text-white">Team Reporting</h3>
+                                    <p class="mt-2 text-base text-indigo-200">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+          <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+            <!-- Heroicon name: outline/reply -->
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+            </svg>
+          </span>
+                                </div>
+                                <div class="mt-6">
+                                    <h3 class="text-lg font-medium text-white">Saved Replies</h3>
+                                    <p class="mt-2 text-base text-indigo-200">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+          <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+            <!-- Heroicon name: outline/chat-alt -->
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+            </svg>
+          </span>
+                                </div>
+                                <div class="mt-6">
+                                    <h3 class="text-lg font-medium text-white">Email Commenting</h3>
+                                    <p class="mt-2 text-base text-indigo-200">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+          <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+            <!-- Heroicon name: outline/heart -->
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </span>
+                                </div>
+                                <div class="mt-6">
+                                    <h3 class="text-lg font-medium text-white">Connect with Customers</h3>
+                                    <p class="mt-2 text-base text-indigo-200">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</p>
+                                </div>
+                            </div>
+                        </div>
+            </x-app.container>
+        </x-app.section>
+
+
+        <x-app.section class="relative z-20 bg-gray-50">
             <x-app.container>
                 <div class="flex flex-col items-center text-center">
                     <div class="text-3xl font-bold">
@@ -372,6 +521,81 @@
                 </div>
             </x-app.container>
         </x-app.section>
+
+        <x-app.section class="bg-gray-50">
+            <div class="relative">
+                <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+                    <div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
+                        <div>
+                            <div class="mt-6">
+                                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">Stay on top of customer support</h2>
+                                <p class="mt-4 text-lg text-gray-500">Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus viverra dui tellus ornare pharetra.</p>
+                            </div>
+                        </div>
+                        <div class="mt-8 border-t border-gray-200 pt-6">
+                            <blockquote>
+                                <div>
+                                    <p class="text-base text-gray-500">&ldquo;Cras velit quis eros eget rhoncus lacus ultrices sed diam. Sit orci risus aenean curabitur donec aliquet. Mi venenatis in euismod ut.&rdquo;</p>
+                                </div>
+                                <footer class="mt-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="flex-shrink-0">
+                                            <img class="h-6 w-6 rounded-full" src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
+                                        </div>
+                                        <div class="text-base font-medium text-gray-700">Marcia Hill, Digital Marketing Manager</div>
+                                    </div>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="mt-12 sm:mt-16 lg:mt-0">
+                        <div class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+                            <img class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src="https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg" alt="Inbox user interface">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-24">
+                <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+                    <div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+                        <div>
+                            <div class="mt-6">
+                                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">Better understand your customers</h2>
+                                <p class="mt-4 text-lg text-gray-500">Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus viverra dui tellus ornare pharetra.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+                        <div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+                            <img class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none" src="https://tailwindui.com/img/component-images/inbox-app-screenshot-2.jpg" alt="Customer profile user interface">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </x-app.section>
+
+        <x-app.section>
+            <x-app.container>
+                <div class="px-6 py-6 bg-indigo-700 rounded-lg md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center">
+                    <div class="xl:w-0 xl:flex-1">
+                        <h2 class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">Want product news and updates?</h2>
+                        <p class="mt-3 max-w-3xl text-lg leading-6 text-indigo-200">Sign up for our newsletter to stay up to date.</p>
+                    </div>
+                    <div class="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
+                        <form class="sm:flex">
+                            <label for="email-address" class="sr-only">Email address</label>
+                            <input id="email-address" name="email-address" type="email" autocomplete="email" required class="w-full border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white rounded-md" placeholder="Enter your email">
+                            <button type="submit" class="mt-3 w-full flex items-center justify-center px-5 py-3 border border-transparent shadow text-base font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0">Notify me</button>
+                        </form>
+                        <p class="mt-3 text-sm text-indigo-200">
+                            We care about the protection of your data. Read our
+                            <a href="#" class="text-white font-medium underline"> Privacy Policy. </a>
+                        </p>
+                    </div>
+                </div>
+            </x-app.container>
+        </x-app.section>
+
 
 
         <x-app.section class="py-14">

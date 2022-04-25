@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
+use Str;
 
 class GenerateSitemap extends Command
 {
@@ -23,9 +24,14 @@ class GenerateSitemap extends Command
     public function handle()
     {
         SitemapGenerator::create('https://' . config('app.url'))
-            ->hasCrawled(fn (Url $url) =>
-                    $url->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
-            )
+            ->hasCrawled(function (Url $url) {
+                    $url->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY);
+
+                    if (!Str::contains($url->path(),'img')) {
+                        return $url;
+                    }
+
+            })
             ->writeToFile(public_path('sitemap.xml'));
     }
 }

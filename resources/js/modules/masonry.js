@@ -1,14 +1,16 @@
 import Masonry from 'masonry-layout'
 import imagesLoaded from 'imagesloaded'
 
-window.masonry = () =>  {
+window.masonry = (item = '.grid-item') =>  {
     return {
+        item,
+
         init() {
             let node = this.$root
 
             imagesLoaded(node, function () {
                 new Masonry(node, {
-                    itemSelector: '.grid-item',
+                    itemSelector: this.item,
                     percentPosition: true,
                 })
             })

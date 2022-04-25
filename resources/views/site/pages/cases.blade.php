@@ -9,7 +9,7 @@
             <div class="pt-40 pb-20 relative z-30">
                 <x-app.container>
                     <div class="text-7xl max-w-[900px] max-w-3xl font-bold">
-                        {{ $page->title }}
+                        {{ $page->getField('title') }}
                     </div>
                 </x-app.container>
             </div>

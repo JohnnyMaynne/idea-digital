@@ -1,7 +1,7 @@
 @props([
     'clients',
     'title' => 'Our clients',
-    'subtitle' => 'Here’s what our happy customers say about working with Idea Digital Agency.Here’s what our happy customers say about working with Idea Digital Agency.v',
+    'subtitle' => 'Here’s what our happy customers say about working with Idea Digital Agency.Here’s what our happy customers say about working with Idea Digital Agency.',
 ])
 
 <x-app.section {{$attributes->class('')}}>

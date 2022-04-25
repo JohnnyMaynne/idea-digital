@@ -11,7 +11,6 @@ window.feedback = () =>  {
             phone: null,
             company: null,
             message: null,
-            budget: null,
             source: null,
         },
 
@@ -22,7 +21,6 @@ window.feedback = () =>  {
             = this.form.phone
             = this.form.company
             = this.form.message
-            = this.form.budget
             = this.form.source
             = null
         },

@@ -5,7 +5,7 @@ namespace App\Helpers;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\ComponentAttributeBag;
 
-class viewComponent
+class ViewComponent
 {
     /**
      * Render a blade component.

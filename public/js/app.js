@@ -5450,11 +5450,10 @@ window.feedback = function () {
       phone: null,
       company: null,
       message: null,
-      budget: null,
       source: null
     },
     resetForm: function resetForm() {
-      this.form.first_name = this.form.last_name = this.form.email = this.form.phone = this.form.company = this.form.message = this.form.budget = this.form.source = null;
+      this.form.first_name = this.form.last_name = this.form.email = this.form.phone = this.form.company = this.form.message = this.form.source = null;
     },
     handler: function handler() {
       var _this = this;
@@ -5611,12 +5610,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.masonry = function () {
+  var item = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '.grid-item';
   return {
+    item: item,
     init: function init() {
       var node = this.$root;
       imagesloaded__WEBPACK_IMPORTED_MODULE_1___default()(node, function () {
         new (masonry_layout__WEBPACK_IMPORTED_MODULE_0___default())(node, {
-          itemSelector: '.grid-item',
+          itemSelector: this.item,
           percentPosition: true
         });
       });
